@@ -68,7 +68,7 @@
       <div class="kv"><span>Сумма</span><b>${sum}</b></div>
       <h3>Инструкция по заселению</h3><p class="ph">[Код замка и инструкция придут гостю перед заездом — текст от владельца]</p>
       <h3>Документы брони</h3>
-      <ul class="plain">${o.st >= 4 ? `<li>Счёт № С-${o.id.slice(2)} <span class="dl" aria-disabled="true">⬇</span></li><li>Акт № А-${o.id.slice(2)} <span class="dl" aria-disabled="true">⬇</span></li>` : '<li class="muted">Появятся после выезда</li>'}</ul>
+      <ul class="plain">${o.st >= 4 ? `<li>Счёт № С-${o.id.slice(2)} <span class="dl" aria-disabled="true"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg></span></li><li>Акт № А-${o.id.slice(2)} <span class="dl" aria-disabled="true"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg></span></li>` : '<li class="muted">Появятся после выезда</li>'}</ul>
       <div class="btns"><button class="kb-btn" type="button" data-toast="Демо: запрос на продление отправлен менеджеру">Продлить</button><button class="kb-btn ghost" type="button" data-toast="Демо: запрос на отмену отправлен менеджеру">Отменить</button></div>`;
     openLayer('#drawer');
   }
@@ -97,7 +97,7 @@
   // Документы
   $$('tbody[data-docs]').forEach((tb) => {
     const t = tb.dataset.docs, pre = t[0];
-    tb.innerHTML = orders.filter((o) => o.st >= 3).map((o, i) => `<tr><td data-label="Документ"><b>${t} № ${pre}-${o.id.slice(2)}</b></td><td data-label="Дата">${o.to}.2026</td><td data-label="Бронь">${o.id}</td><td data-label="Сумма">${sum}</td><td data-label=""><span class="dl" aria-disabled="true" title="Демо: скачивание отключено">⬇</span></td></tr>`).join('');
+    tb.innerHTML = orders.filter((o) => o.st >= 3).map((o, i) => `<tr><td data-label="Документ"><b>${t} № ${pre}-${o.id.slice(2)}</b></td><td data-label="Дата">${o.to}.2026</td><td data-label="Бронь">${o.id}</td><td data-label="Сумма">${sum}</td><td data-label=""><span class="dl" aria-disabled="true" title="Демо: скачивание отключено"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg></span></td></tr>`).join('');
   });
 
   // Вкладки

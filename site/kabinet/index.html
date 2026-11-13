@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="ru">
-<head><meta name="robots" content="noindex,nofollow"><script>window.SH_BASE="../";</script>
+<head>
+<meta name="robots" content="noindex,nofollow">
+<script>window.SH_BASE="../";</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Демо личного кабинета компании — Sweet Home</title>
-<meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Демо-прототип личного кабинета корпоративного клиента Sweet Home. Данные вымышленные.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/kabinet.css">
 </head>
 <body>
@@ -39,10 +40,10 @@
       <p class="muted">ООО «Пример-Строй» · <button class="linkbtn" type="button" id="switch-co">Сменить компанию</button></p></div>
   </div>
   <div class="tiles4">
-    <button class="tile" type="button" data-open="book"><span class="ti">🛏️</span>Забронировать студию</button>
-    <button class="tile" type="button" data-open="book" data-group="1"><span class="ti">👥</span>Групповая заявка</button>
-    <a class="tile" href="#orders"><span class="ti">📅</span>Продлить проживание</a>
-    <a class="tile" href="#company"><span class="ti">🧑‍💼</span>Мои гости</a>
+    <button class="tile" type="button" data-open="book"><img class="ti" src="../assets/img/3d/key.svg" alt="" width="72" height="72">Забронировать студию</button>
+    <button class="tile" type="button" data-open="book" data-group="1"><img class="ti" src="../assets/img/3d/people.svg" alt="" width="72" height="72">Групповая заявка</button>
+    <a class="tile" href="#orders"><img class="ti" src="../assets/img/3d/calendar.svg" alt="" width="72" height="72">Продлить проживание</a>
+    <a class="tile" href="#company"><img class="ti" src="../assets/img/3d/badge.svg" alt="" width="72" height="72">Мои гости</a>
   </div>
   <div class="cols2">
     <div class="box">
@@ -66,9 +67,9 @@
 
 <!-- ЗАЯВКИ И БРОНИ -->
 <section class="view" id="v-orders">
-  <div class="vh"><h1>Заявки и брони</h1><button class="kb-btn" type="button" data-open="book">+ Новая заявка</button></div>
+  <div class="vh"><h1>Заявки и брони</h1><button class="kb-btn" type="button" data-open="book"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-sparkles"/></svg> Новая заявка</button></div>
   <div class="toolbar">
-    <input type="search" id="o-search" placeholder="Номер заявки" aria-label="Поиск по номеру заявки">
+    <label class="srch"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="o-search" placeholder="Номер заявки" aria-label="Поиск по номеру заявки"></label>
     <select id="o-status" aria-label="Статус"><option value="">Статус: все</option></select>
     <button class="fchip" type="button" data-toast="Демо-фильтр">Гости</button>
     <button class="fchip" type="button" data-toast="Демо-фильтр">Автор</button>
@@ -95,12 +96,12 @@
   </div>
   <div class="tabpane" id="co-staff">
     <div class="toolbar">
-      <input type="search" id="s-search" placeholder="ФИО, телефон или e-mail" aria-label="Поиск сотрудника">
+      <label class="srch"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-search"/></svg><input type="search" id="s-search" placeholder="ФИО, телефон или e-mail" aria-label="Поиск сотрудника"></label>
       <button class="fchip" type="button" data-toast="Демо-фильтр">Отдел</button>
       <button class="fchip" type="button" data-toast="Демо-фильтр">Роль</button>
       <button class="fchip" type="button" data-toast="Демо-фильтр">Статус</button>
       <span class="sp"></span>
-      <button class="kb-btn ghost" type="button" data-toast="Демо: выгрузка таблицы">Скачать таблицу</button>
+      <button class="kb-btn ghost" type="button" data-toast="Демо: выгрузка таблицы"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg> Скачать таблицу</button>
       <button class="kb-btn" type="button" data-toast="Демо: форма добавления сотрудника">+ Добавить сотрудника</button>
     </div>
     <table class="tbl"><thead><tr><th>ФИО</th><th>Телефон</th><th>E-mail</th><th>Отдел</th><th>Роль</th><th>Статус</th></tr></thead><tbody id="staff-body"></tbody></table>
@@ -140,7 +141,7 @@
 
 <!-- ФИНАНСЫ -->
 <section class="view" id="v-finance">
-  <div class="vh"><h1>Финансы</h1><button class="kb-btn ghost" type="button" data-toast="Демо: отчёт формируется">Скачать отчёт</button></div>
+  <div class="vh"><h1>Финансы</h1><button class="kb-btn ghost" type="button" data-toast="Демо: отчёт формируется"><svg class="i" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg> Скачать отчёт</button></div>
   <div class="toolbar">
     <select aria-label="Период"><option>За текущий квартал</option><option>За месяц</option><option>За год</option></select>
     <button class="fchip" type="button" data-toast="Демо-фильтр">Тип оплаты</button>
@@ -171,14 +172,14 @@
 
 <!-- Нижняя навигация на мобильном -->
 <nav class="kb-bottom" aria-label="Разделы кабинета (моб.)">
-  <a href="#home" data-view="home"><span>🏠</span>Главная</a>
-  <a href="#orders" data-view="orders"><span>📅</span>Брони</a>
-  <a href="#company" data-view="company"><span>👥</span>Компания</a>
-  <a href="#finance" data-view="finance"><span>💳</span>Финансы</a>
-  <a href="#docs" data-view="docs"><span>📄</span>Документы</a>
+  <a href="#home" data-view="home"><span><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-house"/></svg></span>Главная</a>
+  <a href="#orders" data-view="orders"><span><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-calendar-days"/></svg></span>Брони</a>
+  <a href="#company" data-view="company"><span><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-users"/></svg></span>Компания</a>
+  <a href="#finance" data-view="finance"><span><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-wallet"/></svg></span>Финансы</a>
+  <a href="#docs" data-view="docs"><span><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-file-text"/></svg></span>Документы</a>
 </nav>
 
-<button class="chat" type="button" data-toast="Демо: здесь будет чат с поддержкой" aria-label="Чат поддержки">💬</button>
+<button class="chat" type="button" data-toast="Демо: здесь будет чат с поддержкой" aria-label="Чат поддержки"><svg class="i" width="24" height="24" aria-hidden="true"><use href="#i-message-circle"/></svg></button>
 
 <!-- Детали брони -->
 <aside class="drawer" id="drawer" aria-hidden="true">
@@ -209,6 +210,7 @@
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../assets/js/icons.js"></script>
 <script src="../assets/js/kabinet.js" defer></script>
 </body>
 </html>

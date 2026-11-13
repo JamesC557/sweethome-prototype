@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/
+Disallow: /tools/
+Disallow: /seo/
+
+Sitemap: https://irkutsk.sweethomegroup.ru/sitemap.xml
