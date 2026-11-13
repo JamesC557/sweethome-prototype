@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ru">
+<head><meta name="robots" content="noindex,nofollow"><script>window.SH_BASE="../";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Демо личного кабинета компании — Sweet Home</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Демо-прототип личного кабинета корпоративного клиента Sweet Home. Данные вымышленные.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/kabinet.css">
+</head>
+<body>
+<div class="demo-banner" role="note"><strong>Демо личного кабинета — так это будет выглядеть.</strong> Данные вымышленные, ничего не сохраняется и не отправляется. <a href="../index.html">← на сайт</a></div>
+
+<header class="kb-top">
+  <a class="kb-logo" href="#home">Sweet<span>Home</span></a>
+  <nav class="kb-nav" aria-label="Разделы кабинета">
+    <a href="#home" data-view="home">Главная</a>
+    <a href="#orders" data-view="orders">Заявки и брони</a>
+    <a href="#company" data-view="company">Моя компания</a>
+    <a href="#finance" data-view="finance">Финансы</a>
+    <a href="#docs" data-view="docs">Документы</a>
+  </nav>
+  <div class="kb-right">
+    <button class="kb-btn" type="button" data-open="book">Забронировать</button>
+    <span class="chip" title="Демо-сумма">К оплате: <b>— ₽</b></span>
+    <span class="kb-co">ООО «Пример-Строй»</span>
+  </div>
+</header>
+
+<main class="kb-main">
+
+<!-- ГЛАВНАЯ -->
+<section class="view" id="v-home">
+  <div class="hello">
+    <div><h1>Здравствуйте, Анна!</h1>
+      <p class="muted">ООО «Пример-Строй» · <button class="linkbtn" type="button" id="switch-co">Сменить компанию</button></p></div>
+  </div>
+  <div class="tiles4">
+    <button class="tile" type="button" data-open="book"><span class="ti">🛏️</span>Забронировать студию</button>
+    <button class="tile" type="button" data-open="book" data-group="1"><span class="ti">👥</span>Групповая заявка</button>
+    <a class="tile" href="#orders"><span class="ti">📅</span>Продлить проживание</a>
+    <a class="tile" href="#company"><span class="ti">🧑‍💼</span>Мои гости</a>
+  </div>
+  <div class="cols2">
+    <div class="box">
+      <h2>Финансы</h2>
+      <div class="kv"><span>Постоплатный лимит</span><b>— ₽ <small>(демо)</small></b></div>
+      <div class="kv"><span>Задолженность</span><b class="ok-t">нет</b></div>
+      <div class="kv"><span>Неоплаченных счетов</span><b>0</b></div>
+      <a href="#finance" class="more">История операций →</a>
+    </div>
+    <div class="box">
+      <h2>Ближайшие заезды</h2>
+      <ul class="upcoming" id="upcoming"></ul>
+      <a href="#orders" class="more">Все брони →</a>
+    </div>
+  </div>
+  <div class="promo">
+    <div><h2>Подключите ЭДО</h2><p>Акты и счета будут приходить в вашу систему электронного документооборота автоматически. <span class="idea">идея — уточнить у владельца</span></p></div>
+    <button class="kb-btn ghost" type="button" data-toast="Демо: запрос на подключение ЭДО">Подключить</button>
+  </div>
+</section>
+
+<!-- ЗАЯВКИ И БРОНИ -->
+<section class="view" id="v-orders">
+  <div class="vh"><h1>Заявки и брони</h1><button class="kb-btn" type="button" data-open="book">+ Новая заявка</button></div>
+  <div class="toolbar">
+    <input type="search" id="o-search" placeholder="Номер заявки" aria-label="Поиск по номеру заявки">
+    <select id="o-status" aria-label="Статус"><option value="">Статус: все</option></select>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Гости</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Автор</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Отдел</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Даты проживания</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Дата создания</button>
+  </div>
+  <table class="tbl rows-click">
+    <thead><tr><th>№</th><th>Гости</th><th>Студия</th><th>Даты</th><th>Ночей</th><th>Статус</th><th>Сумма</th></tr></thead>
+    <tbody id="orders-body"></tbody>
+  </table>
+</section>
+
+<!-- МОЯ КОМПАНИЯ -->
+<section class="view" id="v-company">
+  <h1>Моя компания</h1>
+  <div class="tabs" role="tablist" data-group="co">
+    <button role="tab" aria-selected="true" data-tab="co-staff">Сотрудники</button>
+    <button role="tab" aria-selected="false" data-tab="co-roles">Права доступа</button>
+    <button role="tab" aria-selected="false" data-tab="co-deps">Отделы</button>
+    <button role="tab" aria-selected="false" data-tab="co-req">Реквизиты</button>
+    <button role="tab" aria-selected="false" data-tab="co-notif">Уведомления</button>
+    <button role="tab" aria-selected="false" data-tab="co-rules">Правила размещения</button>
+  </div>
+  <div class="tabpane" id="co-staff">
+    <div class="toolbar">
+      <input type="search" id="s-search" placeholder="ФИО, телефон или e-mail" aria-label="Поиск сотрудника">
+      <button class="fchip" type="button" data-toast="Демо-фильтр">Отдел</button>
+      <button class="fchip" type="button" data-toast="Демо-фильтр">Роль</button>
+      <button class="fchip" type="button" data-toast="Демо-фильтр">Статус</button>
+      <span class="sp"></span>
+      <button class="kb-btn ghost" type="button" data-toast="Демо: выгрузка таблицы">Скачать таблицу</button>
+      <button class="kb-btn" type="button" data-toast="Демо: форма добавления сотрудника">+ Добавить сотрудника</button>
+    </div>
+    <table class="tbl"><thead><tr><th>ФИО</th><th>Телефон</th><th>E-mail</th><th>Отдел</th><th>Роль</th><th>Статус</th></tr></thead><tbody id="staff-body"></tbody></table>
+  </div>
+  <div class="tabpane" id="co-roles" hidden>
+    <div class="grid4">
+      <div class="box"><h3>Администратор</h3><p class="muted">Всё: сотрудники, права, брони, финансы, документы.</p></div>
+      <div class="box"><h3>Бронирует</h3><p class="muted">Создаёт заявки и продлевает проживание для своего отдела.</p></div>
+      <div class="box"><h3>Только просмотр</h3><p class="muted">Видит брони и статусы, ничего не меняет.</p></div>
+      <div class="box"><h3>Бухгалтер</h3><p class="muted">Финансы, счета, акты, акты сверки.</p></div>
+    </div>
+  </div>
+  <div class="tabpane" id="co-deps" hidden>
+    <ul class="plain"><li class="box">Производственный отдел <span class="muted">· 3 сотрудника</span></li><li class="box">Отдел снабжения <span class="muted">· 2 сотрудника</span></li><li class="box">Администрация <span class="muted">· 1 сотрудник</span></li></ul>
+  </div>
+  <div class="tabpane" id="co-req" hidden>
+    <div class="box"><div class="kv"><span>Наименование</span><b>ООО «Пример-Строй»</b></div><div class="kv"><span>ИНН</span><b>0000000000 (демо)</b></div><div class="kv"><span>КПП</span><b>000000000 (демо)</b></div><div class="kv"><span>Юр. адрес</span><b>[демо]</b></div><div class="kv"><span>Договор</span><b>№ Д-000 от [дата] (демо)</b></div></div>
+  </div>
+  <div class="tabpane" id="co-notif" hidden>
+    <div class="box">
+      <label class="chk"><input type="checkbox" checked> Подтверждение брони — на e-mail автора</label>
+      <label class="chk"><input type="checkbox" checked> Инструкция по заселению — гостю в SMS/мессенджер</label>
+      <label class="chk"><input type="checkbox"> Готовность акта — бухгалтеру</label>
+      <label class="chk"><input type="checkbox"> Еженедельная сводка по броням</label>
+    </div>
+  </div>
+  <div class="tabpane" id="co-rules" hidden>
+    <div class="box"><p class="idea">Идея — нужно решение владельца</p>
+      <h3>Правила размещения компании</h3>
+      <div class="kv"><span>Лимит ночей на одну командировку</span><b>14 (демо)</b></div>
+      <div class="kv"><span>Заявка требует согласования руководителем отдела</span><b>да (демо)</b></div>
+      <div class="kv"><span>Тип кроватей по умолчанию</span><b>без разницы</b></div>
+      <p class="muted">Компания задаёт правила сама; заявки сверх лимита уходят на согласование.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ФИНАНСЫ -->
+<section class="view" id="v-finance">
+  <div class="vh"><h1>Финансы</h1><button class="kb-btn ghost" type="button" data-toast="Демо: отчёт формируется">Скачать отчёт</button></div>
+  <div class="toolbar">
+    <select aria-label="Период"><option>За текущий квартал</option><option>За месяц</option><option>За год</option></select>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Тип оплаты</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Отдел</button>
+    <button class="fchip" type="button" data-toast="Демо-фильтр">Тип операции</button>
+  </div>
+  <div class="cols2">
+    <div class="box"><h2>Ночей по месяцам <small class="muted">(демо)</small></h2><div class="bars" id="ch-nights"></div></div>
+    <div class="box"><h2>Расходы по отделам <small class="muted">(демо, доли)</small></h2><div id="ch-deps"></div></div>
+  </div>
+  <table class="tbl"><thead><tr><th>Дата</th><th>№ брони</th><th>Операция</th><th>Сумма</th><th>Остаток</th></tr></thead><tbody id="fin-body"></tbody></table>
+</section>
+
+<!-- ДОКУМЕНТЫ -->
+<section class="view" id="v-docs">
+  <div class="vh"><h1>Документы</h1>
+    <div class="btns"><button class="kb-btn ghost" type="button" data-toast="Демо: запрос акта сверки отправлен менеджеру">Запросить акт сверки</button><button class="kb-btn ghost" type="button" data-toast="Демо: выгрузка за период">Скачать за период</button><button class="kb-btn ghost" type="button" data-toast="Демо: архив формируется">Скачать архивом</button></div></div>
+  <div class="tabs" role="tablist" data-group="docs">
+    <button role="tab" aria-selected="true" data-tab="d-acts">Закрывающие документы</button>
+    <button role="tab" aria-selected="false" data-tab="d-bills">Счета на оплату</button>
+    <button role="tab" aria-selected="false" data-tab="d-certs">Справки о проживании</button>
+  </div>
+  <div class="tabpane" id="d-acts"><table class="tbl"><thead><tr><th>Документ</th><th>Дата</th><th>Бронь</th><th>Сумма</th><th></th></tr></thead><tbody data-docs="Акт"></tbody></table></div>
+  <div class="tabpane" id="d-bills" hidden><table class="tbl"><thead><tr><th>Документ</th><th>Дата</th><th>Бронь</th><th>Сумма</th><th></th></tr></thead><tbody data-docs="Счёт"></tbody></table></div>
+  <div class="tabpane" id="d-certs" hidden><p class="idea" style="margin-bottom:12px">Справки для командированных — уточнить у владельца, какие документы выдаются</p><table class="tbl"><thead><tr><th>Документ</th><th>Дата</th><th>Бронь</th><th>Сумма</th><th></th></tr></thead><tbody data-docs="Справка"></tbody></table></div>
+</section>
+</main>
+
+<!-- Нижняя навигация на мобильном -->
+<nav class="kb-bottom" aria-label="Разделы кабинета (моб.)">
+  <a href="#home" data-view="home"><span>🏠</span>Главная</a>
+  <a href="#orders" data-view="orders"><span>📅</span>Брони</a>
+  <a href="#company" data-view="company"><span>👥</span>Компания</a>
+  <a href="#finance" data-view="finance"><span>💳</span>Финансы</a>
+  <a href="#docs" data-view="docs"><span>📄</span>Документы</a>
+</nav>
+
+<button class="chat" type="button" data-toast="Демо: здесь будет чат с поддержкой" aria-label="Чат поддержки">💬</button>
+
+<!-- Детали брони -->
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-in" role="dialog" aria-modal="true" aria-labelledby="dr-title">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <div id="dr-body"></div>
+  </div>
+</aside>
+
+<!-- Модалка бронирования -->
+<div class="modal" id="book" aria-hidden="true">
+  <form class="modal-in" id="book-form" role="dialog" aria-modal="true" aria-labelledby="bk-title">
+    <button class="x" type="button" data-close aria-label="Закрыть">×</button>
+    <h2 id="bk-title">Забронировать студию</h2>
+    <p class="muted">Это заявка менеджеру: автоматического бронирования нет, менеджер подтвердит наличие.</p>
+    <div class="fgrid">
+      <label>Город<select name="city"><option>Иркутск</option></select></label>
+      <label>Гостей<input type="number" name="guests" min="1" value="1"></label>
+      <label>Заезд<input type="date" name="from"></label>
+      <label>Выезд<input type="date" name="to"></label>
+      <label class="full">Студия<select name="apt" id="bk-apt"><option value="any">Подобрать любую подходящую</option></select></label>
+      <label class="full">Гости (из сотрудников)<select name="staff" id="bk-staff" multiple size="4"></select></label>
+      <label class="full">Кто платит (отдел / центр затрат)<select name="payer"><option>Производственный отдел</option><option>Отдел снабжения</option><option>Администрация</option></select></label>
+      <label class="full">Комментарий<textarea name="comment" rows="3" placeholder="Например: две раздельные кровати"></textarea></label>
+    </div>
+    <button class="kb-btn" type="submit">Отправить заявку менеджеру</button>
+  </form>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../assets/js/kabinet.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Прототип Sweet Home B2B</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: one calm column — intro, two big entry cards, page map, what to review */
+:root{
+  --bg:#FBF8F3; --surface:#FFFFFF; --fg:#1E2A38; --muted:#5B6675; --line:#E6E0D6;
+  --teal:#1F7A6D; --teal-soft:#E3F1EE; --orange:#E8732C; --orange-soft:#FDEBDF;
+  --display:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141B22; --surface:#1C252E; --fg:#EEF1F4; --muted:#A3AEBA; --line:#2C3843;
+  --teal:#4FB7A6; --teal-soft:#1D3A36; --orange:#F08A4B; --orange-soft:#3A2618; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141B22; --surface:#1C252E; --fg:#EEF1F4; --muted:#A3AEBA; --line:#2C3843;
+  --teal:#4FB7A6; --teal-soft:#1D3A36; --orange:#F08A4B; --orange-soft:#3A2618; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;display:flex;flex-direction:column;gap:36px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:700}
+h1{font-family:var(--display);font-size:clamp(28px,5vw,40px);line-height:1.15;margin:6px 0 12px;text-wrap:balance;font-weight:800}
+h2{font-family:var(--display);font-size:20px;margin:0 0 12px;text-wrap:balance}
+p{margin:0;max-width:65ch;color:var(--muted)}
+.note{background:var(--orange-soft);border-radius:10px;padding:12px 16px;color:var(--fg);font-size:14px}
+.entries{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.entry{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;text-decoration:none;color:var(--fg);transition:border-color .15s,transform .15s}
+.entry:hover,.entry:focus-visible{border-color:var(--teal);transform:translateY(-2px)}
+.entry:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.entry b{font-family:var(--display);font-size:19px}
+.entry span{color:var(--muted);font-size:14px}
+.entry .go{margin-top:auto;color:var(--teal);font-weight:700;font-size:14px}
+.entry.k .go{color:var(--orange)}
+.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;list-style:none;padding:0;margin:0}
+.map a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line);display:block;padding:8px 0;font-weight:600}
+.map a small{display:block;color:var(--muted);font-weight:400}
+.map a:hover{color:var(--teal)}
+ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;color:var(--fg)}
+ol li::marker{color:var(--orange);font-weight:700}
+.how{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.entry{transition:none}.entry:hover{transform:none}}
+</style>
+</head><body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Прототип для обсуждения</div>
+    <h1>Сайт и личный кабинет Sweet Home для корпоративных клиентов</h1>
+    <p>Это черновик сайта для компаний, которые селят сотрудников в наши студии в Иркутске, и демо личного кабинета клиента. Всё кликается, но формы никуда не отправляются, а цифры и данные в кабинете вымышленные.</p>
+  </header>
+
+  <div class="note">Пожалуйста, пройдитесь по страницам и пришлите замечания голосовым или текстом: что не так в процессах, чего не хватает клиенту, что лишнее.</div>
+
+  <section class="entries" aria-label="С чего начать">
+    <a class="entry" href="site/index.html">
+      <b>Сайт</b>
+      <span>Главная, каталог студий с заявкой у каждой квартиры, страницы под каждый тип клиента, документы и оплата.</span>
+      <span class="go">Открыть сайт →</span>
+    </a>
+    <a class="entry k" href="site/kabinet/index.html">
+      <b>Личный кабинет клиента</b>
+      <span>Как компания будет оставлять заявки, видеть брони, сотрудников, финансы и закрывающие документы.</span>
+      <span class="go">Открыть кабинет →</span>
+    </a>
+  </section>
+
+  <section>
+    <h2>Все страницы</h2>
+    <ul class="map">
+      <li><a href="site/catalog/index.html">Каталог студий<small>фильтры, заявка на конкретную квартиру</small></a></li>
+      <li><a href="site/komandirovki/index.html">Командированные<small>компании, отправляющие сотрудников</small></a></li>
+      <li><a href="site/aviakompanii/index.html">Авиакомпании<small>экипажи между рейсами</small></a></li>
+      <li><a href="site/vahta/index.html">Вахта и бригады<small>до и после вахты</small></a></li>
+      <li><a href="site/turoperatory/index.html">Туроператоры<small>группы до и после Байкала</small></a></li>
+      <li><a href="site/meropriyatiya/index.html">Мероприятия и спорт<small>участники и команды</small></a></li>
+      <li><a href="site/dokumenty/index.html">Документы и оплата<small>договор, счёт, акт</small></a></li>
+      <li><a href="site/o-kompanii/index.html">О компании<small>цифры, контакты</small></a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>На что посмотреть в первую очередь</h2>
+    <ol>
+      <li>Как клиент оставляет заявку и что происходит дальше: кто ему отвечает, за сколько, как подтверждается бронь.</li>
+      <li>Статусы брони в кабинете (Новая → Подтверждена → Заселён → Выехал → Документы готовы). Так ли это работает у нас?</li>
+      <li>Какие документы мы реально выдаём компаниям и командированным, есть ли ЭДО.</li>
+      <li>Условия для турагентств, групп и вахты: блоки студий, скидки, постоплата.</li>
+      <li>Что отличается в работе с каждым типом клиентов и чего нет на их страницах.</li>
+    </ol>
+  </section>
+
+  <section class="how">
+    <h2>Что здесь пока условно</h2>
+    <span>Цены не указаны, адреса и характеристики известны только у трёх студий, контакты и реквизиты — заглушки, карта появится после подключения ключа Яндекс Карт.</span>
+  </section>
+</div>
+</body></html>
