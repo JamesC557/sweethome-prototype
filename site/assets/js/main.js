@@ -1,9 +1,15 @@
 /* Общий JS: меню, формы, каталог, карты. Без зависимостей. */
 (function () {
   'use strict';
-  // Адрес обработчика заявок. Пока пусто — формы в демо-режиме и ничего не отправляют.
-  // Пример после настройки хостинга: const FORM_ENDPOINT = '/api/lead.php';
-  const FORM_ENDPOINT = '';
+  // Адрес обработчика заявок: веб-приложение Google Apps Script CRM (тестовый этап).
+  // При переезде на свой хостинг заменить на '/api/lead.php'.
+  const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw-W6cjGuZ9NQsAihINh9p7gFFg-ZYCxyP4hobcG9BIkqneks9nVCiLpGBMf6mNbrOn/exec';
+  // Код клиента из персональной ссылки менеджера: ?client=К-001 (запоминается на время визита)
+  const CLIENT = (function () {
+    let c = '';
+    try { c = new URLSearchParams(location.search).get('client') || sessionStorage.getItem('sh_client') || ''; if (c) sessionStorage.setItem('sh_client', c); } catch (x) {}
+    return c.trim();
+  })();
   // Ключ JS API Яндекс Карт. Пока пусто — вместо карты показывается список адресов.
   // <!-- TODO: YANDEX_MAPS_API_KEY -->
   const YMAPS_KEY = '';
@@ -29,6 +35,17 @@
     if (h) h.value = (g.dataset.prefix || '') + b.textContent.trim();
   });
 
+  // Скрытое поле-ловушка для ботов (люди его не видят и не заполняют)
+  function addTrap(f) {
+    if (f.querySelector('input[name="website"]')) return;
+    const t = document.createElement('input');
+    t.type = 'text'; t.name = 'website'; t.tabIndex = -1; t.autocomplete = 'off'; t.setAttribute('aria-hidden', 'true');
+    t.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0';
+    f.appendChild(t);
+  }
+  $$('form.js-lead').forEach(addTrap);
+  new MutationObserver(() => $$('form.js-lead').forEach(addTrap)).observe(document.body, { childList: true, subtree: true });
+
   // Единый обработчик всех форм заявок
   function validate(f) {
     const el = f.elements;
@@ -49,18 +66,23 @@
     if (msg) { if (ok) ok.style.display = 'none'; return; }
     const data = Object.fromEntries(new FormData(f).entries());
     data.page = location.pathname; data.form = f.dataset.form || 'lead';
+    if (CLIENT) data.client = CLIENT;
     if (!FORM_ENDPOINT) {
       ok.textContent = 'Демо-режим: заявка никуда не отправлена (FORM_ENDPOINT не подключён).';
       ok.style.display = 'block'; return;
     }
+    const btn = $('button[type="submit"]', f); if (btn) btn.disabled = true;
     try {
-      const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-      if (!r.ok) throw new Error(String(r.status));
-      ok.textContent = 'Спасибо! Менеджер свяжется с вами в рабочее время.'; ok.style.display = 'block'; f.reset();
+      // text/plain — чтобы браузер не делал предварительный CORS-запрос к Google
+      const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.ok) throw new Error(j.error || String(r.status));
+      ok.textContent = 'Спасибо! Заявка ' + (j.id || '') + ' принята. Счёт и подтверждение пришлём в течение 4 рабочих часов.';
+      ok.style.display = 'block'; if (err) err.style.display = 'none'; f.reset();
       // TODO: цель Яндекс Метрики: ym(COUNTER_ID, 'reachGoal', 'lead')
     } catch (x) {
-      if (err) { err.textContent = 'Не удалось отправить. Позвоните нам или попробуйте позже.'; err.style.display = 'block'; }
-    }
+      if (err) { err.textContent = (x && x.message && !/^\d+$/.test(x.message) && x.message !== 'Failed to fetch' ? x.message + '. ' : '') + 'Не удалось отправить. Позвоните нам или попробуйте позже.'; err.style.display = 'block'; }
+    } finally { if (btn) btn.disabled = false; }
   });
 
   // Данные о студиях
