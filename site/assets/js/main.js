@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872719').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872857').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -191,7 +191,7 @@
 
       const fd = $('#f-district'), fa = $('#f-address'), fb = $('#f-beds'), fn = $('#f-near');
       const apply = () => {
-        const d = fd ? fd.value : '', bd = fb.value, nr = fn.value;
+        const d = fd ? fd.value : '', bd = fb.value, nr = fn ? fn.value : '';
         let n = 0;
         $$('.apt', cat).forEach((c) => {
           const show = (!d || c.dataset.district === d) && (!fa.value || c.dataset.address === fa.value) &&
@@ -202,7 +202,7 @@
         $$('.addr-btn').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.address === fa.value)));
       };
       [fd, fa, fb, fn].filter(Boolean).forEach((i) => i.addEventListener('change', apply));
-      $('#f-reset').addEventListener('click', () => { if (fd) fd.value = ''; fa.value = fb.value = fn.value = ''; apply(); });
+      $('#f-reset').addEventListener('click', () => { if (fd) fd.value = ''; if (fn) fn.value = ''; fa.value = fb.value = ''; apply(); });
       // Клик по адресу в блоке карты — фильтр по дому
       document.addEventListener('click', (e) => {
         const b = e.target.closest('.addr-btn'); if (!b) return;
