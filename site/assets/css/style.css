@@ -274,3 +274,13 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .form-note{font-size:13px;color:var(--muted);margin:0;text-align:center}
 .btn-light{background:#fff;color:var(--dark)}
 .hero .lf label.fl{color:var(--dark)}
+/* Отзывы */
+.reviews{display:grid;gap:16px}
+@media(min-width:700px){.reviews{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:20px;display:flex;flex-direction:column;gap:8px}
+.rev-top{display:flex;gap:12px;align-items:center}
+.rev-top strong{display:block}.rev-top small{color:var(--muted);font-size:13px}
+.ava{width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--orange) 16%,#fff);color:var(--orange);font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.stars{color:#F5B301;letter-spacing:2px;font-size:16px}
+.rev-meta{font-size:13px;color:var(--muted);margin:0}
