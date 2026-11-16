@@ -2,3 +2,4 @@ PNG-иллюстрации (briefcase, plane, helmet, bus, trophy, calendar, key
 Источник: https://github.com/microsoft/fluentui-emoji. Лицензия MIT, Copyright (c) Microsoft Corporation.
 Уменьшены до 192 px. helmet.png — эмодзи «Building construction» (отдельной каски в наборе нет).
 SVG-файлы в этой папке — прежние собственные иллюстрации (site/tools/make_3d.py), остаются в демо личного кабинета.
+pts/*.png — тоже Microsoft Fluent Emoji 3D (MIT), уменьшены до 72 px: иконки пунктов в первом экране.
