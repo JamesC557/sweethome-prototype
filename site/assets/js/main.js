@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872565').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872658').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -134,7 +134,7 @@
       const p = [];
       p.push(['map-pin', a.address + (a.district ? ', ' + a.district + ' р-н' : '')]);
       if (a.complex) p.push(['house', 'ЖК «' + a.complex + '»']);
-      if (a.beds === 'separate') p.push(['bed-double', 'Раздельные спальные места']);
+      if (a.beds === 'separate') p.push(['bed-double', 'Две раздельные кровати']);
       if (a.beds === 'double') p.push(['bed-double', 'Двуспальная кровать']);
       if (a.capacity) p.push(['users', 'До ' + a.capacity + ' гостей']);
       if (a.area) p.push(['house', a.area + ' м²']);
@@ -144,8 +144,6 @@
       if (a.wifi) p.push(['check', 'Wi‑Fi']);
       if (a.parking) p.push(['check', 'Парковка: ' + a.parking]);
       if (a.near && a.near.length) p.push(['search', 'Рядом: ' + a.near.join(', ')]);
-      p.push(['key-round', 'Самостоятельное заселение 24/7']);
-      p.push(['file-check', 'Отчётные документы']);
       return '<ul class="props">' + p.map(([i, t]) => '<li>' + ic(i) + '<span>' + esc(t) + '</span></li>').join('') + '</ul>';
     };
     const gallery = (a) => {
@@ -158,7 +156,7 @@
     };
     const card = (a) => '<article class="card apt" id="' + esc(a.id) + '" data-district="' + esc(a.district || '') + '" data-address="' + esc(a.address) + '" data-beds="' + esc(a.beds || '') + '" data-near="' + esc((a.near || []).join('|')) + '">' +
       gallery(a) +
-      '<div class="apt-head"><span class="badge code">' + esc(a.code) + '</span><h3>' + esc(a.name) + '</h3></div>' +
+      '<div class="apt-head"><h3>' + esc(a.name) + '</h3></div>' +
       props(a) +
       '<button type="button" class="btn apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку на эту студию</button>' +
       '<div class="slot" id="f-' + esc(a.id) + '" data-id="' + esc(a.id) + '" hidden></div></article>';
@@ -193,25 +191,22 @@
 
       const fd = $('#f-district'), fa = $('#f-address'), fb = $('#f-beds'), fn = $('#f-near');
       const apply = () => {
-        const d = fd.value, bd = fb.value, nr = fn.value;
-        // В списке адресов — только дома выбранного района
-        $$('option[data-district]', fa).forEach((o) => { o.hidden = !!d && o.dataset.district !== d; });
-        if (fa.selectedOptions[0] && fa.selectedOptions[0].hidden) fa.value = '';
+        const d = fd ? fd.value : '', bd = fb.value, nr = fn.value;
         let n = 0;
         $$('.apt', cat).forEach((c) => {
           const show = (!d || c.dataset.district === d) && (!fa.value || c.dataset.address === fa.value) &&
-            (!bd || c.dataset.beds === bd) && (!nr || c.dataset.near.split('|').includes(nr));
+            (!bd || c.dataset.beds === bd) && (!nr || nr.split('|').some((x) => c.dataset.near.split('|').includes(x)));
           c.hidden = !show; if (show) n++;
         });
         $('#f-count').textContent = n ? 'Найдено: ' + n + ' ' + plural(n) : 'По этим фильтрам студий нет. Оставьте общую заявку — подберём вручную.';
         $$('.addr-btn').forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.address === fa.value)));
       };
-      [fd, fa, fb, fn].forEach((i) => i.addEventListener('change', apply));
-      $('#f-reset').addEventListener('click', () => { fd.value = fa.value = fb.value = fn.value = ''; apply(); });
+      [fd, fa, fb, fn].filter(Boolean).forEach((i) => i.addEventListener('change', apply));
+      $('#f-reset').addEventListener('click', () => { if (fd) fd.value = ''; fa.value = fb.value = fn.value = ''; apply(); });
       // Клик по адресу в блоке карты — фильтр по дому
       document.addEventListener('click', (e) => {
         const b = e.target.closest('.addr-btn'); if (!b) return;
-        fd.value = ''; fa.value = b.dataset.address; apply();
+        if (fd) fd.value = ''; fa.value = b.dataset.address; apply();
         $('#filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
       apply();
