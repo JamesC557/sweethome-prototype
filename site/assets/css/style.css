@@ -290,3 +290,8 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .logo .logo-t{color:var(--orange)!important;font-weight:700;letter-spacing:.14em;font-size:17px}
 .logo{display:inline-block;gap:0}
 .all-incl{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--muted);margin:4px 0 16px}.all-incl .i{color:var(--orange)}
+/* Фильтры: своя стрелка у выпадающих списков, аккуратная кнопка сброса */
+.filters select{-webkit-appearance:none;appearance:none;padding-right:44px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF5F1F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center/20px 20px;cursor:pointer}
+.filters select:focus{outline:2px solid var(--orange);outline-offset:1px}
+.f-reset{background:none!important;border:0!important;box-shadow:none;color:var(--orange)!important;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding:8px 4px!important;cursor:pointer}
+.f-reset:hover{text-decoration-thickness:2px}
