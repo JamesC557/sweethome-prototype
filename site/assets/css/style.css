@@ -284,3 +284,7 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .ava{width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--orange) 16%,#fff);color:var(--orange);font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
 .stars{color:#F5B301;letter-spacing:2px;font-size:16px}
 .rev-meta{font-size:13px;color:var(--muted);margin:0}
+/* Логотип: знак-домик + SWEET HOME */
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo img{width:36px;height:34px;display:block}
+.logo .logo-t{color:var(--orange)!important;font-weight:700;letter-spacing:.14em;font-size:17px}

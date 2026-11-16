@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 210" fill="none">
+  <g transform="translate(140 0)">
+    <path d="M26 98V44L60 15l34 29v22" stroke="#FF5F1F" stroke-width="9" stroke-linecap="square"/>
+    <path d="M42 84V54l18-15 18 15v44H52V82h12" stroke="#2B2522" stroke-width="7" stroke-linecap="square"/>
+    <g fill="#FF5F1F"><rect x="54" y="50" width="5" height="5" rx="1"/><rect x="61" y="50" width="5" height="5" rx="1"/><rect x="54" y="57" width="5" height="5" rx="1"/><rect x="61" y="57" width="5" height="5" rx="1"/></g>
+  </g>
+  <text x="200" y="168" text-anchor="middle" font-family="Onest, Arial, sans-serif" font-weight="700" font-size="44" letter-spacing="9" fill="#FF5F1F">SWEET HOME</text>
+</svg>
