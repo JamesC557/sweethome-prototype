@@ -111,7 +111,7 @@
   function openLayer(sel) { const el = $(sel); el.classList.add('on'); el.setAttribute('aria-hidden', 'false'); }
   function closeLayers() { $$('.drawer,.modal').forEach((el) => { el.classList.remove('on'); el.setAttribute('aria-hidden', 'true'); }); }
   $('#bk-staff').innerHTML = staff.filter((s) => s.st !== 'Отключён').map((s) => `<option>${esc(s.n)}</option>`).join('');
-  fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794871032').then((r) => r.json()).then((j) => {
+  fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794871135').then((r) => r.json()).then((j) => {
     $('#bk-apt').innerHTML += j.apartments.filter((a) => a.district !== 'TODO').map((a) => `<option value="${a.id}">${esc(a.title)}</option>`).join('');
   }).catch(() => {});
   document.addEventListener('click', (e) => {
