@@ -288,3 +288,4 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .logo{display:inline-flex;align-items:center;gap:10px}
 .logo img{width:36px;height:34px;display:block}
 .logo .logo-t{color:var(--orange)!important;font-weight:700;letter-spacing:.14em;font-size:17px}
+.logo{display:inline-block;gap:0}
