@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872901').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873061').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -99,31 +99,47 @@
   };
   const plural = (n) => n % 10 === 1 && n % 100 !== 11 ? 'студия' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'студии' : 'студий');
 
-  // Карта: Яндекс Карты при наличии ключа YMAPS_KEY, иначе блок-заглушка со списком адресов.
-  // Координаты — из lat/lng; если их нет, адрес геокодируется по address_full (ключу нужен доступ к геокодеру).
+  // Карта: Яндекс Карты (JS API 2.1). Ключ YMAPS_KEY — вписать из кабинета разработчика Яндекса;
+  // без ключа API тоже загружается, но для боевого сайта ключ обязателен по условиям Яндекса.
+  // Координаты домов — lat/lng в data/apartments.json; если их нет, адрес геокодируется (нужен ключ).
+  // window.shMap.show(address) — открыть дом на карте (кнопка «Показать на карте» в карточке).
+  const marks = {};
+  let mapReady = null;
   function renderMap(el, apts) {
     const houses = byAddress(apts);
-    const list = el.parentNode.querySelector('.addr-list');
-    if (list) list.innerHTML = houses.map((h) => '<li><button type="button" class="addr-btn" data-address="' + esc(h.address) + '">' + ic('map-pin') +
-      '<span><strong>' + esc(h.address) + '</strong><small>' + esc(h.a.district) + ' район' + (h.a.complex ? ' · ЖК «' + esc(h.a.complex) + '»' : '') + '</small></span></button></li>').join('');
-    if (!YMAPS_KEY) { el.hidden = true; return; } // без ключа карту не показываем: адреса уже есть списком
-    const s = document.createElement('script');
-    s.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=' + encodeURIComponent(YMAPS_KEY);
-    s.onload = () => window.ymaps.ready(() => {
-      el.innerHTML = '';
-      const m = new window.ymaps.Map(el, { center: [52.28, 104.3], zoom: 11, controls: ['zoomControl', 'fullscreenControl'] });
-      const add = (h, coords) => {
-        const body = h.list.map((a) => '<a href="#' + esc(a.id) + '">' + esc(a.code + ' · ' + a.name) + '</a>').join('<br>');
-        m.geoObjects.add(new window.ymaps.Placemark(coords, { hintContent: h.address, balloonContentHeader: esc(h.address), balloonContentBody: body, iconCaption: String(h.list.length) }, { preset: 'islands#orangeDotIcon' }));
-      };
-      Promise.all(houses.map((h) => (h.a.lat && h.a.lng)
-        ? (add(h, [h.a.lat, h.a.lng]), null)
-        : window.ymaps.geocode(h.a.address_full || ('Иркутск, ' + h.address), { results: 1 }).then((r) => { const g = r.geoObjects.get(0); if (g) add(h, g.geometry.getCoordinates()); }).catch(() => {})
-      )).then(() => { const b = m.geoObjects.getBounds(); if (b) m.setBounds(b, { checkZoomRange: true, zoomMargin: 40 }); });
+    mapReady = new Promise((done) => {
+      const s = document.createElement('script');
+      s.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU' + (YMAPS_KEY ? '&apikey=' + encodeURIComponent(YMAPS_KEY) : '');
+      s.onerror = () => { el.hidden = true; const sec = el.closest('.map-sec'); if (sec) sec.hidden = true; };
+      s.onload = () => window.ymaps.ready(() => {
+        el.innerHTML = '';
+        const m = new window.ymaps.Map(el, { center: [52.28, 104.32], zoom: 12, controls: ['zoomControl', 'fullscreenControl'] }, { suppressMapOpenBlock: true });
+        m.behaviors.disable('scrollZoom');
+        const add = (h, coords) => {
+          const body = h.list.map((a) => '<a href="#' + esc(a.id) + '">' + esc(a.name) + '</a>' + (a.beds === 'separate' ? ' — две раздельные кровати' : '')).join('<br>');
+          const pm = new window.ymaps.Placemark(coords, {
+            hintContent: h.address, iconCaption: h.address,
+            balloonContentHeader: esc(h.address) + (h.a.complex ? ' · ЖК «' + esc(h.a.complex) + '»' : ''),
+            balloonContentBody: body,
+          }, { preset: 'islands#orangeDotIconWithCaption' });
+          marks[h.address] = pm; m.geoObjects.add(pm);
+        };
+        Promise.all(houses.map((h) => (h.a.lat && h.a.lng)
+          ? (add(h, [h.a.lat, h.a.lng]), null)
+          : window.ymaps.geocode(h.a.address_full || ('Иркутск, ' + h.address), { results: 1 }).then((r) => { const g = r.geoObjects.get(0); if (g) add(h, g.geometry.getCoordinates()); }).catch(() => {})
+        )).then(() => { const b = m.geoObjects.getBounds(); if (b) m.setBounds(b, { checkZoomRange: true, zoomMargin: 40 }); done(m); });
+      });
+      document.head.appendChild(s);
     });
-    document.head.appendChild(s);
   }
-  $$('.js-map').forEach((el) => loadApts().then((a) => renderMap(el, a)).catch(() => { el.textContent = 'Не удалось загрузить адреса.'; }));
+  window.shMap = {
+    show(address) {
+      const el = $('.js-map'); if (!el || !mapReady) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      mapReady.then((m) => { const pm = marks[address]; if (!pm) return; m.setCenter(pm.geometry.getCoordinates(), 15, { duration: 300 }).then(() => pm.balloon.open()); });
+    },
+  };
+  $$('.js-map').forEach((el) => loadApts().then((a) => renderMap(el, a)).catch(() => { el.hidden = true; }));
 
   // Каталог
   const cat = $('#catalog');
@@ -158,6 +174,7 @@
       gallery(a) +
       '<div class="apt-head"><h3>' + esc(a.name) + '</h3></div>' +
       props(a) +
+      '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button>' +
       '<button type="button" class="btn apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку на эту студию</button>' +
       '<div class="slot" id="f-' + esc(a.id) + '" data-id="' + esc(a.id) + '" hidden></div></article>';
 
@@ -176,6 +193,7 @@
       });
       // Заявка на конкретную студию: форма с apartment_id
       cat.addEventListener('click', (e) => {
+        const mb = e.target.closest('.apt-map'); if (mb) { window.shMap.show(mb.dataset.address); return; }
         const b = e.target.closest('.apt-cta'); if (!b) return;
         const s = b.nextElementSibling;
         if (!s.firstElementChild) {
