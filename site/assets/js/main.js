@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794869037').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794869378').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -105,9 +105,9 @@
     const houses = byAddress(apts);
     const list = el.parentNode.querySelector('.addr-list');
     if (list) list.innerHTML = houses.map((h) => '<li><button type="button" class="addr-btn" data-address="' + esc(h.address) + '">' + ic('map-pin') +
-      '<span><strong>' + esc(h.address) + '</strong><small>' + esc(h.a.district) + ' район' + (h.a.complex ? ' · ЖК «' + esc(h.a.complex) + '»' : '') + ' · ' + h.list.length + ' ' + plural(h.list.length) + '</small></span></button></li>').join('');
+      '<span><strong>' + esc(h.address) + '</strong><small>' + esc(h.a.district) + ' район' + (h.a.complex ? ' · ЖК «' + esc(h.a.complex) + '»' : '') + '</small></span></button></li>').join('');
     if (!YMAPS_KEY) {
-      el.innerHTML = '<div class="mapph">' + ic('map-pin', 32) + '<p><strong>Здесь будет карта со всеми студиями</strong></p><p>' + houses.length + ' адресов в Иркутске: ' + houses.map((h) => esc(h.address)).join(' · ') + '</p></div>';
+      el.innerHTML = '<div class="mapph">' + ic('map-pin', 32) + '<p><strong>Здесь будет карта со всеми студиями</strong></p><p>' + 'Октябрьский и Свердловский районы Иркутска' + '</p></div>';
       return;
     }
     const s = document.createElement('script');
