@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873457').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873575').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -127,7 +127,7 @@
         Promise.all(houses.map((h) => (h.a.lat && h.a.lng)
           ? (add(h, [h.a.lat, h.a.lng]), null)
           : window.ymaps.geocode(h.a.address_full || ('Иркутск, ' + h.address), { results: 1 }).then((r) => { const g = r.geoObjects.get(0); if (g) add(h, g.geometry.getCoordinates()); }).catch(() => {})
-        )).then(() => { const b = m.geoObjects.getBounds(); if (b) m.setBounds(b, { checkZoomRange: true, zoomMargin: 40 }); done(m); });
+        )).then(() => { const b = m.geoObjects.getBounds(); if (houses.length === 1 && marks[houses[0].address]) m.setCenter(marks[houses[0].address].geometry.getCoordinates(), 15); else if (b) m.setBounds(b, { checkZoomRange: true, zoomMargin: 40 }); done(m); });
       });
       document.head.appendChild(s);
     });
@@ -139,7 +139,7 @@
       mapReady.then((m) => { const pm = marks[address]; if (!pm) return; m.setCenter(pm.geometry.getCoordinates(), 15, { duration: 300 }).then(() => pm.balloon.open()); });
     },
   };
-  $$('.js-map').forEach((el) => loadApts().then((a) => renderMap(el, a)).catch(() => { el.hidden = true; }));
+  $$('.js-map').forEach((el) => loadApts().then((a) => renderMap(el, el.dataset.address ? a.filter((x) => x.address === el.dataset.address) : a)).catch(() => { el.hidden = true; }));
 
   // Каталог
   const cat = $('#catalog');
@@ -172,9 +172,9 @@
     };
     const card = (a) => '<article class="card apt" id="' + esc(a.id) + '" data-district="' + esc(a.district || '') + '" data-address="' + esc(a.address) + '" data-beds="' + esc(a.beds || '') + '" data-near="' + esc((a.near || []).join('|')) + '">' +
       gallery(a) +
-      '<div class="apt-head"><h3>' + esc(a.name) + '</h3></div>' +
+      '<div class="apt-head"><h3><a href="' + esc(url('catalog/' + a.id + '/')) + '">' + esc(a.name) + '</a></h3></div>' +
       props(a) +
-      '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button>' +
+      '<div class="apt-links"><a class="apt-more" href="' + esc(url('catalog/' + a.id + '/')) + '">Подробнее о студии</a>' + '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button></div>' +
       '<button type="button" class="btn apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку на эту студию</button>' +
       '<div class="slot" id="f-' + esc(a.id) + '" data-id="' + esc(a.id) + '" hidden></div></article>';
 

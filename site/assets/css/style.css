@@ -296,3 +296,21 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .f-reset{background:none!important;border:0!important;box-shadow:none;color:var(--orange)!important;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding:8px 4px!important;cursor:pointer}
 .f-reset:hover{text-decoration-thickness:2px}
 .apt-map{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--orange);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:4px 0;margin:0 0 10px;text-decoration:underline;text-underline-offset:3px}.apt-map .i{color:var(--orange)}.map{min-height:420px}
+/* Страница студии */
+.studio-top{padding:24px 0}
+.studio-top h1{font-size:32px}
+.lead-s{color:var(--muted);margin:6px 0 18px}
+.sgal{display:grid;gap:8px;grid-template-columns:1fr 1fr;border-radius:var(--r-md);overflow:hidden}
+.sgal a:first-child{grid-column:1/-1}
+.sgal img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+@media(min-width:900px){.sgal{grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px}.sgal a:first-child{grid-column:1;grid-row:1/3}.sgal img{aspect-ratio:auto}}
+.studio-grid{display:grid;gap:32px}
+@media(min-width:960px){.studio-grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:start}.studio-aside{position:sticky;top:80px}}
+.studio-aside{background:var(--cream);border-radius:var(--r-md);padding:20px}
+.props.big li{font-size:16px;padding:4px 0}
+.same{list-style:none;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));padding:0}
+.same a{display:block;text-decoration:none;color:var(--dark)}.same img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.same span{display:block;font-weight:600;font-size:14px;margin-top:6px}.same small{display:block;font-weight:400;color:var(--muted)}
+.apt-head h3 a{text-decoration:none;color:inherit}.apt-head h3 a:hover{color:var(--orange)}
+.apt-links{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center}
+.apt-more{color:var(--orange);font-weight:600;font-size:14px;text-underline-offset:3px;margin:0 0 10px}
