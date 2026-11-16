@@ -296,7 +296,3 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .f-reset{background:none!important;border:0!important;box-shadow:none;color:var(--orange)!important;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding:8px 4px!important;cursor:pointer}
 .f-reset:hover{text-decoration-thickness:2px}
 .apt-map{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:var(--orange);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:4px 0;margin:0 0 10px;text-decoration:underline;text-underline-offset:3px}.apt-map .i{color:var(--orange)}.map{min-height:420px}
-/* «Показать на карте» — заметная вторая кнопка в карточке */
-.apt-map{display:flex;width:100%;justify-content:center;gap:8px;padding:12px 16px!important;margin:0 0 10px;border:2px solid var(--orange)!important;border-radius:999px;background:#fff;color:var(--orange);font-weight:600;font-size:15px;text-decoration:none!important}
-.apt-map:hover{background:color-mix(in srgb,var(--orange) 8%,#fff)}
-.apt-map .i{width:18px;height:18px}
