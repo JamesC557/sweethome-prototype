@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872879').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794872901').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -195,7 +195,7 @@
         let n = 0;
         $$('.apt', cat).forEach((c) => {
           const show = (!d || c.dataset.district === d) && (!fa.value || c.dataset.address === fa.value) &&
-            (!bd || c.dataset.beds === bd) && (!nr || nr.split('|').some((x) => c.dataset.near.split('|').includes(x)));
+            (!bd || (bd === 'double' ? c.dataset.beds !== 'separate' : c.dataset.beds === bd)) && (!nr || nr.split('|').some((x) => c.dataset.near.split('|').includes(x)));
           c.hidden = !show; if (show) n++;
         });
         $('#f-count').textContent = n ? 'Найдено: ' + n + ' ' + plural(n) : 'По этим фильтрам студий нет. Оставьте общую заявку — подберём вручную.';
