@@ -384,3 +384,4 @@ html,body{overflow-x:hidden}
   h1{font-size:28px}
 }
 @media(max-width:600px){.filters label{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:6px;row-gap:8px}.filters label select{grid-column:1/-1}}
+@media(max-width:600px){#studio .split .btn{margin-bottom:16px}.feat-i .fi{width:38px;height:38px}}
