@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873732').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873891').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -174,8 +174,8 @@
       gallery(a) +
       '<div class="apt-head"><h3><a href="' + esc(url('catalog/' + a.id + '/')) + '">' + esc(a.name) + '</a></h3></div>' +
       props(a) +
-      '<div class="apt-links"><a class="apt-more" href="' + esc(url('catalog/' + a.id + '/')) + '">Подробнее о студии</a>' + '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button></div>' +
-      '<button type="button" class="btn apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку на эту студию</button>' +
+      '<div class="apt-links">' + '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button></div>' +
+      '<div class="apt-actions"><a class="btn btn-sm btn-outline" href="' + esc(url('catalog/' + a.id + '/')) + '">Подробнее</a><button type="button" class="btn btn-sm apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку</button></div>' +
       '<div class="slot" id="f-' + esc(a.id) + '" data-id="' + esc(a.id) + '" hidden></div></article>';
 
     loadApts().then((apts) => {
@@ -195,7 +195,7 @@
       cat.addEventListener('click', (e) => {
         const mb = e.target.closest('.apt-map'); if (mb) { window.shMap.show(mb.dataset.address); return; }
         const b = e.target.closest('.apt-cta'); if (!b) return;
-        const s = b.nextElementSibling;
+        const s = b.closest('.apt').querySelector('.slot');
         if (!s.firstElementChild) {
           const f = tpl.content.firstElementChild.cloneNode(true);
           f.elements.apartment_id.value = s.dataset.id;
