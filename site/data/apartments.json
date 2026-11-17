@@ -177,7 +177,7 @@
    "floor": null,
    "elevator": null,
    "area": null,
-   "beds": null,
+   "beds": "separate",
    "capacity": null,
    "kitchen": null,
    "appliances": [],
@@ -261,7 +261,7 @@
    "wifi": null,
    "parking": null,
    "to_center": null,
-   "to_airport": null,
+   "to_airport": "шаговая доступность",
    "near": [],
    "features": [
     "Круглосуточное самостоятельное заселение",
@@ -299,7 +299,7 @@
    "wifi": null,
    "parking": null,
    "to_center": null,
-   "to_airport": null,
+   "to_airport": "шаговая доступность",
    "near": [],
    "features": [
     "Круглосуточное самостоятельное заселение",
@@ -337,7 +337,7 @@
    "wifi": null,
    "parking": null,
    "to_center": null,
-   "to_airport": null,
+   "to_airport": "шаговая доступность",
    "near": [],
    "features": [
     "Круглосуточное самостоятельное заселение",
@@ -375,7 +375,7 @@
    "wifi": null,
    "parking": null,
    "to_center": null,
-   "to_airport": null,
+   "to_airport": "шаговая доступность",
    "near": [],
    "features": [
     "Круглосуточное самостоятельное заселение",
@@ -481,7 +481,7 @@
    "floor": null,
    "elevator": null,
    "area": null,
-   "beds": null,
+   "beds": "separate",
    "capacity": null,
    "kitchen": null,
    "appliances": [],
@@ -489,8 +489,10 @@
    "wifi": null,
    "parking": null,
    "to_center": null,
-   "to_airport": null,
-   "near": [],
+   "to_airport": "5–10 минут",
+   "near": [
+    "Ивано-Матрёнинская больница"
+   ],
    "features": [
     "Круглосуточное самостоятельное заселение",
     "Отчётные документы",

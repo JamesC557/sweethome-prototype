@@ -413,3 +413,17 @@ footer .logo{color:#fff!important}
   #benefits .grid,#segments .grid{--gap:20px;gap:var(--gap)}
 }
 .card h3{margin-top:0}
+/* Палитра E — жёлтая (как жёлтый в логотипе Chrome), по просьбе управляющих. Текст на жёлтом — тёмный */
+html[data-pal=e]{--orange:#FBBC04;--teal:#A66F00;--cream:#FFF8E1;--hero:#FBBC04;--hero-ink:#1F1A17;--hero-sub:#4A3A0A;--fin:#FBBC04;--line:#F1E2B0}
+html[data-pal=e] .btn,html[data-pal=e] .apt-cta{color:#1F1A17}
+html[data-pal=e] .btn-outline{color:#1F1A17;border-color:#E5A800}
+html[data-pal=e] .hero .eyebrow{color:#4A3A0A!important;opacity:1}
+html[data-pal=e] .hero .lead,html[data-pal=e] .hero-pts li{color:#1F1A17;opacity:1}
+html[data-pal=e] .hero-pts li{background:rgba(255,255,255,.45)}
+html[data-pal=e] .hero-pts .i{color:#1F1A17}
+html[data-pal=e] .hero .btn,html[data-pal=e] .final .btn{background:#1F1A17;color:#fff}
+html[data-pal=e] .hero .lf .btn{background:#FBBC04;color:#1F1A17}
+html[data-pal=e] .final,html[data-pal=e] .final h2,html[data-pal=e] .final p{color:#1F1A17}
+html[data-pal=e] .logo span{color:#E5A800}
+html[data-pal=e] .steps li:before{color:#1F1A17}
+html[data-pal=e] .ico,html[data-pal=e] .chip .i{color:#A66F00}
