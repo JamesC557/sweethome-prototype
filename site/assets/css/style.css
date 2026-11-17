@@ -314,3 +314,7 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .apt-head h3 a{text-decoration:none;color:inherit}.apt-head h3 a:hover{color:var(--orange)}
 .apt-links{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center}
 .apt-more{color:var(--orange);font-weight:600;font-size:14px;text-underline-offset:3px;margin:0 0 10px}
+/* Удобства с иконками */
+.feat-i{list-style:none;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.feat-i li{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:500}
+.feat-i .fi{width:40px;height:40px;flex:none;border-radius:50%;background:color-mix(in srgb,var(--orange) 12%,#fff);color:var(--orange);display:flex;align-items:center;justify-content:center}
