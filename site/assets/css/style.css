@@ -328,3 +328,11 @@ html:not([data-pal]) .hero-pts li{background:rgba(255,255,255,.1)}
 .btn-sm{white-space:nowrap}
 @media(max-width:420px){.btn-sm{font-size:14px;padding:12px 6px!important}}
 .cards:has(.slot:not([hidden])){align-items:start}
+/* CTA в середине страницы */
+.mid-cta{background:var(--orange);color:#fff;padding:40px 0}
+.mid-cta .wrap{display:grid;gap:20px;align-items:center}
+.mid-cta h2{margin:0 0 6px;color:#fff}.mid-cta p{opacity:.92;margin:0}
+.mid-cta .btn{background:#fff;color:var(--dark)}
+.mid-cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn-outline-w{background:transparent!important;color:#fff!important;box-shadow:inset 0 0 0 2px #fff}
+@media(min-width:900px){.mid-cta .wrap{grid-template-columns:1fr auto}}
