@@ -357,3 +357,30 @@ header nav.open .nav-dd{display:block}
 header nav.open .nav-dd-btn{display:block;font-weight:700;opacity:1;margin-bottom:8px;pointer-events:none}
 header nav.open .nav-dd-btn .i{display:none}
 header nav.open .nav-dd-menu{gap:10px;padding-left:14px;border-left:2px solid var(--line)}
+/* ===== Мобильная версия: исправления ===== */
+/* Никаких горизонтальных выездов */
+html,body{overflow-x:hidden}
+.lf input,.lf select,.lf textarea{min-width:0;max-width:100%;box-sizing:border-box}
+.lf input[type=date]{-webkit-appearance:none;appearance:none;display:block;width:100%;min-height:52px;background:#fff;color:var(--dark);text-align:left}
+.lf input[type=date]::-webkit-date-and-time-value{text-align:left}
+.fields>*{min-width:0}
+.lf label.fl{min-width:0}
+/* Шапка: логотип слева, справа «Подобрать» и иконка меню */
+.menu-btn{width:44px;height:44px;padding:0!important;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:12px;order:3}
+.menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
+@media(max-width:767px){header .logo{order:1}header .wrap>.btn{order:2;margin-left:auto}header nav{order:4}header .wrap{gap:8px}header .wrap>.btn{padding:10px 16px;font-size:14px}}
+/* Галерея на главной — ровные квадраты */
+.gallery img{height:auto!important;aspect-ratio:1/1!important}
+/* Удобства на телефоне — компактно в 2 колонки */
+@media(max-width:600px){
+  .feat-i{grid-template-columns:1fr 1fr;gap:8px}
+  .feat-i li{flex-direction:column;align-items:flex-start;gap:8px;padding:12px;font-size:14px;line-height:1.3}
+  .feat-i .fi{width:34px;height:34px}
+  /* Фильтры: подпись сверху, список на всю ширину */
+  .filters label{flex-direction:column;align-items:stretch;gap:6px;border-radius:16px;padding:10px 12px}
+  .filters select{max-width:none;width:100%}
+  .all-incl{align-items:flex-start}
+  .btn{max-width:100%}
+  h1{font-size:28px}
+}
+@media(max-width:600px){.filters label{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:6px;row-gap:8px}.filters label select{grid-column:1/-1}}
