@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794947760').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794948211').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -121,7 +121,7 @@
             hintContent: h.address, iconCaption: h.address,
             balloonContentHeader: esc(h.address) + (h.a.complex ? ' · ЖК «' + esc(h.a.complex) + '»' : ''),
             balloonContentBody: body,
-          }, { preset: 'islands#orangeDotIconWithCaption' });
+          }, { preset: 'islands#yellowDotIconWithCaption' });
           marks[h.address] = pm; m.geoObjects.add(pm);
         };
         Promise.all(houses.map((h) => (h.a.lat && h.a.lng)
