@@ -385,3 +385,31 @@ html,body{overflow-x:hidden}
 }
 @media(max-width:600px){.filters label{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:6px;row-gap:8px}.filters label select{grid-column:1/-1}}
 @media(max-width:600px){#studio .split .btn{margin-bottom:16px}.feat-i .fi{width:38px;height:38px}}
+/* Шапка: вход в личный кабинет */
+.kab-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:14px;color:inherit;padding:8px 10px;border-radius:999px}
+.kab-link:hover{background:var(--cream)}
+.kab-link .i{color:var(--orange)}
+@media(min-width:768px){header .kab-link{margin-left:auto}header .kab-link+.btn{margin-left:4px}}
+@media(max-width:767px){header .kab-link{order:2;margin-left:auto;width:44px;height:44px;justify-content:center;padding:0;border:1px solid var(--line);border-radius:12px}header .kab-link span{display:none}header .kab-link~.btn{margin-left:0}header .wrap>.btn{order:3}.menu-btn{order:4}header nav{order:5}}
+@media(min-width:768px) and (max-width:1100px){header .kab-link span{display:none}}
+/* Короткая форма: поле на всю ширину */
+@media(min-width:768px){.fields .span2{grid-column:1/-1}}
+/* Подвал */
+footer{padding:40px 0 20px}
+footer .cols{display:grid;gap:28px}
+footer h4{color:#fff;font-size:15px;margin:0 0 12px}
+footer ul{padding:0;gap:8px}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+.f-brand .logo{color:#fff;font-size:20px}.f-brand p{margin:10px 0 0}
+.f-brand .btn{color:#fff;margin-top:6px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:16px;font-size:13px;opacity:.7}
+@media(min-width:768px){footer .cols{grid-template-columns:1.4fr 1fr 1fr 1.3fr}}
+@media(min-width:768px){.menu-btn{display:none!important}}
+footer .logo{color:#fff!important}
+/* Ровные сетки: неполный последний ряд — по центру */
+@media(min-width:768px){
+  #benefits .grid,#segments .grid{display:flex;flex-wrap:wrap;justify-content:center}
+  #benefits .grid>.card,#segments .grid>.card{flex:0 1 calc((100% - 2*var(--gap,20px))/3)}
+  #benefits .grid,#segments .grid{--gap:20px;gap:var(--gap)}
+}
+.card h3{margin-top:0}

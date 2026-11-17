@@ -7,16 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Демо личного кабинета компании — Sweet Home</title>
 <meta name="description" content="Демо-прототип личного кабинета корпоративного клиента Sweet Home. Данные вымышленные.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/kabinet.css?v=1794874664">
+<link rel="preload" href="../assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/kabinet.css?v=1794874809">
 </head>
 <body>
 <div class="demo-banner" role="note"><strong>Демо личного кабинета — так это будет выглядеть.</strong> Данные вымышленные, ничего не сохраняется и не отправляется. <a href="../index.html">← на сайт</a></div>
 
 <header class="kb-top">
   <a class="kb-logo" href="#home">Sweet<span>Home</span></a>
+  <a class="kb-site" href="../index.html">← На сайт</a>
   <nav class="kb-nav" aria-label="Разделы кабинета">
     <a href="#home" data-view="home">Главная</a>
     <a href="#orders" data-view="orders">Заявки и брони</a>
@@ -40,10 +39,10 @@
       <p class="muted">ООО «Пример-Строй» · <button class="linkbtn" type="button" id="switch-co">Сменить компанию</button></p></div>
   </div>
   <div class="tiles4">
-    <button class="tile" type="button" data-open="book"><img class="ti" src="../assets/img/3d/key.svg" alt="" width="72" height="72">Забронировать студию</button>
-    <button class="tile" type="button" data-open="book" data-group="1"><img class="ti" src="../assets/img/3d/people.svg" alt="" width="72" height="72">Групповая заявка</button>
-    <a class="tile" href="#orders"><img class="ti" src="../assets/img/3d/calendar.svg" alt="" width="72" height="72">Продлить проживание</a>
-    <a class="tile" href="#company"><img class="ti" src="../assets/img/3d/badge.svg" alt="" width="72" height="72">Мои гости</a>
+    <button class="tile" type="button" data-open="book"><img class="ti" src="../assets/img/3d/key.png" alt="" width="72" height="72">Забронировать студию</button>
+    <button class="tile" type="button" data-open="book" data-group="1"><img class="ti" src="../assets/img/3d/bus.png" alt="" width="72" height="72">Групповая заявка</button>
+    <a class="tile" href="#orders"><img class="ti" src="../assets/img/3d/calendar.png" alt="" width="72" height="72">Продлить проживание</a>
+    <a class="tile" href="#company"><img class="ti" src="../assets/img/3d/briefcase.png" alt="" width="72" height="72">Мои гости</a>
   </div>
   <div class="cols2">
     <div class="box">
@@ -210,7 +209,7 @@
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="../assets/js/icons.js?v=1794874664"></script>
-<script src="../assets/js/kabinet.js?v=1794874664" defer></script>
+<script src="../assets/js/icons.js?v=1794874809"></script>
+<script src="../assets/js/kabinet.js?v=1794874809" defer></script>
 </body>
 </html>
