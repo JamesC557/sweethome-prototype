@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794873891').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794874183').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -160,6 +160,7 @@
       if (a.wifi) p.push(['check', 'Wi‑Fi']);
       if (a.parking) p.push(['check', 'Парковка: ' + a.parking]);
       if (a.near && a.near.length) p.push(['search', 'Рядом: ' + a.near.join(', ')]);
+      if (a.to_airport) p.push(['airplane', a.to_airport === 'шаговая доступность' ? 'Аэропорт в шаговой доступности' : a.to_airport === '500 м' ? '500 метров до аэропорта' : 'Аэропорт: ' + a.to_airport]);
       return '<ul class="props">' + p.map(([i, t]) => '<li>' + ic(i) + '<span>' + esc(t) + '</span></li>').join('') + '</ul>';
     };
     const gallery = (a) => {
