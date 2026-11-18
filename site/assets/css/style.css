@@ -590,3 +590,18 @@ h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
  .cl:nth-child(7n){width:calc(38% - 5px)}
 }
 @media(prefers-reduced-motion:reduce){.cl{transition:none}}
+/* За что нас благодарят */
+.love{background:linear-gradient(180deg,#FFFBF0 0%,#FFF4D1 100%)}
+.love h2{margin:4px 0 8px}.love-sub{color:#5c5246;max-width:620px;margin:0 0 28px}
+.love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.love-card{background:#fff;border-radius:20px;padding:24px 22px 20px;box-shadow:0 8px 28px rgba(21,18,13,.07);border:1px solid #F1E6C8;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.love-card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(21,18,13,.12)}
+.love-ic{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#FFE08A,#F2B526);display:flex;align-items:center;justify-content:center;color:#15120D;margin-bottom:14px}
+.love-card h3{font-size:19px;margin:0 0 8px;color:#15120D}.love-card p{margin:0 0 14px;color:#4a4036;font-size:15px;line-height:1.55}
+.love-card blockquote{margin:auto 0 0;padding:12px 14px;background:#FFF8E3;border-left:3px solid #F2B526;border-radius:10px;font-size:14px;font-style:italic;color:#3A2E14}
+.love-card cite{display:block;font-style:normal;font-size:12px;color:#8F6200;margin-top:6px;font-weight:600}
+.love-grid:has(.love-card:nth-child(6)) .love-card:first-child{grid-column:span 1}
+@media(max-width:1024px){.love-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.love-grid{grid-template-columns:1fr;gap:12px}.love-card{padding:18px}}
+@media(min-width:1025px){.love-grid{grid-template-columns:repeat(6,1fr)}.love-card{grid-column:span 2}.love-grid:not(:has(.love-card:nth-child(6))) .love-card:nth-child(n+4){grid-column:span 3}}
+@media(min-width:601px) and (max-width:1024px){.love-grid:not(:has(.love-card:nth-child(6))) .love-card:last-child{grid-column:1/-1}}
