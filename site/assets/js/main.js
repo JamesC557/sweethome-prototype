@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795041951').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795042607').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -159,7 +159,8 @@
       if (a.washer) p.push(['check', 'Стиральная машина']);
       if (a.wifi) p.push(['check', 'Wi‑Fi']);
       if (a.parking) p.push(['check', 'Парковка: ' + a.parking]);
-      if (a.near && a.near.length) p.push(['search', 'Рядом: ' + a.near.join(', ')]);
+      if (a.near && a.near.length) p.push(['search', 'Пешком: ' + a.near.join(', ')]);
+      if (a.near_car && a.near_car.length) p.push(['search', '~10 минут на машине: ' + a.near_car.join(', ')]);
       if (a.to_airport) p.push(['airplane', a.to_airport === 'шаговая доступность' ? 'Аэропорт в шаговой доступности' : a.to_airport === '500 м' ? '500 метров до аэропорта' : 'Аэропорт: ' + a.to_airport]);
       return '<ul class="props">' + p.map(([i, t]) => '<li>' + ic(i) + '<span>' + esc(t) + '</span></li>').join('') + '</ul>';
     };
@@ -171,7 +172,7 @@
         '</div>' + (ph.length > 1 ? '<button type="button" class="gal-btn prev" aria-label="Предыдущее фото">' + ic('chevron-down') + '</button><button type="button" class="gal-btn next" aria-label="Следующее фото">' + ic('chevron-down') + '</button>' : '') +
         '<span class="gal-count">1 / ' + ph.length + '</span></div>';
     };
-    const card = (a) => '<article class="card apt" id="' + esc(a.id) + '" data-district="' + esc(a.district || '') + '" data-address="' + esc(a.address) + '" data-beds="' + esc(a.beds || '') + '" data-near="' + esc((a.near || []).join('|')) + '">' +
+    const card = (a) => '<article class="card apt" id="' + esc(a.id) + '" data-district="' + esc(a.district || '') + '" data-address="' + esc(a.address) + '" data-beds="' + esc(a.beds || '') + '" data-near="' + esc((a.near || []).concat(a.near_car || []).join('|')) + '">' +
       gallery(a) +
       '<div class="apt-head"><h3><a href="' + esc(url('catalog/' + a.id + '/')) + '">' + esc(a.name) + '</a></h3>' + (a.code ? '<span class="art" title="Артикул студии — назовите его менеджеру">' + esc(a.code) + '</span>' : '') + '</div>' +
       props(a) +
