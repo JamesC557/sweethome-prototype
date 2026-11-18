@@ -646,3 +646,19 @@ body:has(.vhero) header nav svg{color:#fff}
 .vhero-form .hero-pts{margin-top:18px}
 @media(max-width:960px){body:has(.vhero) header #nav{background:#15120D!important;border:1px solid rgba(255,255,255,.12);border-radius:18px;z-index:60;box-shadow:0 20px 40px rgba(0,0,0,.4)}body:has(.vhero) header .wrap{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(21,18,13,.78)}}
 @media(max-width:960px){body:has(.vhero) header #nav a,body:has(.vhero) header #nav button,body:has(.vhero) header #nav span{color:#F5EEDC!important}body:has(.vhero) header #nav a:hover{color:#FFE08A!important}}
+/* Кому подходят — бенто */
+.seg2{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.seg2-bento{grid-template-columns:repeat(4,1fr)}
+.seg2-card{display:flex;flex-direction:column;background:#fff;border:1px solid #EDE5D3;border-radius:22px;padding:22px;text-decoration:none;color:#15120D;transition:transform .25s,box-shadow .25s;box-shadow:0 6px 20px rgba(21,18,13,.05)}
+.seg2-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(21,18,13,.12)}
+.seg2-card .ill{width:72px;height:72px;margin-bottom:10px}
+.seg2-card h3{font-size:19px;margin:0 0 6px}.seg2-card p{margin:0 0 14px;color:#5c5246;font-size:15px;line-height:1.5}
+.seg2-more{margin-top:auto;font-weight:600;color:#8F6200;font-size:14px}
+.seg2-big{grid-column:span 2;background-size:cover;background-position:center;color:#fff;justify-content:flex-end;min-height:300px;border:0;padding:28px}
+.seg2-big h3{font-size:clamp(24px,2.4vw,32px);color:#fff}.seg2-big p{color:rgba(255,255,255,.9);max-width:380px;font-size:16px}
+.seg2-big ul{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:8px}
+.seg2-big li{font-size:13px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.seg2-big .seg2-more{color:#FFE08A}
+.seg2-tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:#FFC53D;color:#15120D;padding:5px 10px;border-radius:8px;margin-bottom:auto}
+@media(max-width:1024px){.seg2,.seg2-bento{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.seg2,.seg2-bento{grid-template-columns:1fr;gap:12px}.seg2-big{grid-column:auto;min-height:340px}.seg2-card{padding:18px}}
