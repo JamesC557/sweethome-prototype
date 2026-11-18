@@ -607,3 +607,8 @@ h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
 @media(min-width:601px) and (max-width:1024px){.love-grid:not(:has(.love-card:nth-child(6))) .love-card:last-child{grid-column:1/-1}}
 @media(min-width:1025px){.houses{grid-template-columns:repeat(3,1fr)!important}}
 @media(min-width:601px) and (max-width:1024px){.houses{grid-template-columns:repeat(2,1fr)!important}}
+/* hero video */
+.hero-photo video{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:58% 60%;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.18);display:block;background:#2a241b}
+@media(min-width:960px){.hero-photo video{height:100%;min-height:520px;aspect-ratio:auto}}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}.hero-photo{background:url(/assets/video/hero-poster.jpg) 58% 60%/cover;border-radius:28px;min-height:520px}}
+@media(min-width:960px){.hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important}.hero-photo{align-self:start;position:sticky;top:90px}.hero-photo video{height:auto!important;min-height:0!important;aspect-ratio:4/3!important;object-position:60% 55%}}
