@@ -686,3 +686,6 @@ body:has(.vhero) header nav svg{color:#fff}
 .contract-list li::before{content:"✓";position:absolute;left:16px;top:14px;width:22px;height:22px;border-radius:50%;background:#FFC53D;color:#15120D;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
 .contract-list b{color:#fff;font-size:16px}.contract-list span{color:rgba(245,238,220,.7);font-size:14px}
 @media(max-width:900px){.contract-in{grid-template-columns:1fr;gap:24px}.contract-btns .btn{flex:1;justify-content:center}}
+.seg-contract-btn{margin-top:20px;background:transparent!important;color:#FFE08A!important;border:1.5px solid #FFC53D!important;box-shadow:none!important;backdrop-filter:blur(6px)}
+.seg-contract-btn:hover{background:rgba(255,197,61,.15)!important}
+@media(max-width:600px){.seg-contract-btn{width:100%;justify-content:center;white-space:normal;text-align:center}}
