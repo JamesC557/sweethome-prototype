@@ -612,3 +612,37 @@ h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
 @media(min-width:960px){.hero-photo video{height:100%;min-height:520px;aspect-ratio:auto}}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}.hero-photo{background:url(/assets/video/hero-poster.jpg) 58% 60%/cover;border-radius:28px;min-height:520px}}
 @media(min-width:960px){.hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important}.hero-photo{align-self:start;position:sticky;top:90px}.hero-photo video{height:auto!important;min-height:0!important;aspect-ratio:4/3!important;object-position:60% 55%}}
+/* ===== Видео-hero в стиле «окно» ===== */
+.vhero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;background:#15120D;margin:0}
+.vhero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.vhero-shade{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(21,18,13,.35) 0%,rgba(21,18,13,.62) 70%),linear-gradient(180deg,rgba(21,18,13,.55) 0%,rgba(21,18,13,.15) 35%,rgba(21,18,13,.7) 100%)}
+.vhero-in{position:relative;z-index:2;max-width:900px;padding-top:110px;padding-bottom:70px}
+.vhero-kicker{font-size:14px;letter-spacing:.02em;opacity:.9;margin:0 0 14px}
+.vhero h1{font-size:clamp(38px,6.4vw,78px);line-height:1.02;letter-spacing:-.025em;font-weight:600;margin:0 0 20px;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.vhero h1 span{color:#FFC53D}
+.vhero-lead{font-size:clamp(16px,1.6vw,19px);line-height:1.55;max-width:640px;margin:0 auto 28px;opacity:.92}
+.vhero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.vhero .vhero-main{background:#fff!important;color:#15120D!important;border:0;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.vhero .vhero-main:hover{background:#FFE08A!important}
+.vhero .vhero-ghost{background:rgba(255,255,255,.14)!important;color:#fff!important;border:1px solid rgba(255,255,255,.45)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:none}
+.vhero .vhero-ghost:hover{background:rgba(255,255,255,.24)!important}
+.vhero-proof{font-size:14px;opacity:.85;margin:0}.vhero-proof b{color:#FFE08A}
+/* стеклянная шапка поверх видео — только на главной */
+body:has(.vhero) header{position:fixed;top:14px;left:0;right:0;background:transparent!important;border:0!important;box-shadow:none!important;z-index:50;pointer-events:none}
+body:has(.vhero) header .wrap{pointer-events:auto;background:rgba(21,18,13,.42);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 10px 8px 22px;max-width:1180px}
+body:has(.vhero) header .logo{color:#fff}
+body:has(.vhero) header nav a,body:has(.vhero) header .h-phone{color:#fff}
+body:has(.vhero) header nav a:hover,body:has(.vhero) header .h-phone:hover{color:#FFE08A}
+body:has(.vhero) .menu-btn span{background:#fff}
+body:has(.vhero) .menu-btn{background:transparent;border-color:rgba(255,255,255,.35)}
+body:has(.vhero) .crumbs{display:none}
+.vhero-form{padding-top:56px}
+@media(max-width:960px){body:has(.vhero) header .wrap{margin:0 10px;padding:6px 8px 6px 16px}body:has(.vhero) header nav{background:#15120D;border-radius:18px}}
+@media(max-width:600px){.vhero-in{padding-top:96px;padding-bottom:48px}.vhero-btns .btn{width:100%;justify-content:center}.vhero-video{object-position:62% 50%}}
+@media(prefers-reduced-motion:reduce){.vhero-video{display:none}.vhero{background:#15120D url(/assets/video/hero-poster.jpg) 60% 50%/cover}}
+body:has(.vhero) header nav button,body:has(.vhero) header nav summary,body:has(.vhero) header nav .dd>*:first-child{color:#fff!important}
+body:has(.vhero) header nav svg{color:#fff}
+.vhero-form .hero-pts li{color:#15120D!important;background:#fff!important;border:1px solid #EDE5D3!important;box-shadow:0 4px 14px rgba(21,18,13,.06)}
+.vhero-form .hero-pts{margin-top:18px}
+@media(max-width:960px){body:has(.vhero) header #nav{background:#15120D!important;border:1px solid rgba(255,255,255,.12);border-radius:18px;z-index:60;box-shadow:0 20px 40px rgba(0,0,0,.4)}body:has(.vhero) header .wrap{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(21,18,13,.78)}}
+@media(max-width:960px){body:has(.vhero) header #nav a,body:has(.vhero) header #nav button,body:has(.vhero) header #nav span{color:#F5EEDC!important}body:has(.vhero) header #nav a:hover{color:#FFE08A!important}}
