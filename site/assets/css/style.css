@@ -544,3 +544,49 @@ h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
 .cookie-btns{display:flex;gap:10px;flex-wrap:wrap}.cookie .btn{padding:10px 16px;font-size:14px}
 .cookie .btn-outline{background:transparent!important;color:#FFE08A!important;border:1px solid #FFC53D!important;box-shadow:none}
 @media(max-width:560px){.cookie{left:10px;right:10px;bottom:10px;padding:14px}.cookie-btns{width:100%}.cookie-btns .btn{flex:1}}
+/* Нам доверяют — логотипы в разнобой */
+.clients{background:#fff;overflow:hidden}
+.clients h2{margin:4px 0 8px}.clients-sub{max-width:640px;color:#5c5246;margin:0 0 28px}
+.clients-cloud{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:46px;gap:14px}
+.cl{background:#fff;border:1px solid #EDE5D3;border-radius:18px;display:flex;align-items:center;justify-content:center;padding:14px 18px;box-shadow:0 6px 22px rgba(21,18,13,.06);transition:transform .25s,box-shadow .25s}
+.cl:hover{transform:translateY(-4px) rotate(0deg)!important;box-shadow:0 12px 30px rgba(21,18,13,.12)}
+.cl img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+/* desktop: 12 колонок, разные размеры и сдвиги */
+.cl1{grid-column:1/4;grid-row:span 3}
+.cl2{grid-column:4/7;grid-row:span 2;transform:translateY(18px)}
+.cl3{grid-column:7/10;grid-row:span 2;transform:rotate(-1.5deg)}
+.cl4{grid-column:10/13;grid-row:span 3;transform:translateY(-10px)}
+.cl5{grid-column:4/6;grid-row:span 2;transform:translateY(26px)}
+.cl6{grid-column:6/10;grid-row:span 2;transform:rotate(1deg)}
+.cl7{grid-column:1/3;grid-row:span 3;transform:translateY(8px)}
+.cl8{grid-column:3/5;grid-row:span 2;transform:translateY(30px) rotate(-2deg)}
+.cl9{grid-column:5/9;grid-row:span 2;transform:translateY(20px)}
+.cl10{grid-column:9/11;grid-row:span 2;transform:rotate(1.5deg)}
+.cl11{grid-column:11/13;grid-row:span 3}
+.cl12{grid-column:2/5;grid-row:span 2;transform:translateY(24px)}
+.cl13{grid-column:5/7;grid-row:span 2;transform:translateY(40px) rotate(-1deg)}
+.cl14{grid-column:7/10;grid-row:span 2;transform:translateY(16px)}
+.cl15{grid-column:10/12;grid-row:span 2;transform:translateY(-4px) rotate(2deg)}
+.cl16{grid-column:1/4;grid-row:span 2;transform:translateY(-14px) rotate(-1deg)}
+.clients-cloud{padding-bottom:40px}
+/* tablet + mobile: плотное облако из карточек разной ширины */
+@media(max-width:1024px){
+ .clients-cloud{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding-bottom:16px}
+ .cl{grid-column:auto!important;height:78px;flex:0 0 auto;width:calc(25% - 9px);transform:none}
+ .cl:nth-child(5n+1){width:calc(33% - 8px);height:92px;transform:rotate(-1.2deg)}
+ .cl:nth-child(5n+2){transform:translateY(8px)}
+ .cl:nth-child(5n+3){width:calc(30% - 8px);transform:rotate(1.2deg)}
+ .cl:nth-child(5n+4){width:calc(20% - 8px);transform:translateY(-6px)}
+ .cl:nth-child(7n){width:calc(36% - 8px);transform:translateY(6px) rotate(-.8deg)}
+}
+@media(max-width:600px){
+ .clients-cloud{gap:9px}
+ .cl{height:58px;padding:8px 10px;border-radius:12px;width:calc(50% - 5px)}
+ .cl:nth-child(5n+1){width:calc(58% - 5px);height:66px}
+ .cl:nth-child(5n+2){width:calc(42% - 5px)}
+ .cl:nth-child(5n+3){width:calc(45% - 5px)}
+ .cl:nth-child(5n+4){width:calc(55% - 5px)}
+ .cl:nth-child(5n){width:calc(62% - 5px)}
+ .cl:nth-child(7n){width:calc(38% - 5px)}
+}
+@media(prefers-reduced-motion:reduce){.cl{transition:none}}
