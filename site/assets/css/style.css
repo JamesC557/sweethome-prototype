@@ -510,3 +510,8 @@ html[data-y=y2] .mid-cta .btn.btn-outline-w{background:transparent!important;col
 /* Подсказка под полем «Компания, ИНН или № договора» */
 .f-hint{grid-column:1/-1;margin:-4px 2px 2px;font-size:12.5px;line-height:1.4;color:var(--muted)}
 .lf .fields .span2{grid-column:1/-1}
+
+/* артикул студии */
+.art{display:inline-flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em;line-height:1;padding:5px 9px;border-radius:8px;background:#FFF4D1;color:#15120D;border:1px solid #F2B526;vertical-align:middle;white-space:nowrap}
+h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
+.apt-head{justify-content:space-between}

@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1794952773').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795036271').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -173,7 +173,7 @@
     };
     const card = (a) => '<article class="card apt" id="' + esc(a.id) + '" data-district="' + esc(a.district || '') + '" data-address="' + esc(a.address) + '" data-beds="' + esc(a.beds || '') + '" data-near="' + esc((a.near || []).join('|')) + '">' +
       gallery(a) +
-      '<div class="apt-head"><h3><a href="' + esc(url('catalog/' + a.id + '/')) + '">' + esc(a.name) + '</a></h3></div>' +
+      '<div class="apt-head"><h3><a href="' + esc(url('catalog/' + a.id + '/')) + '">' + esc(a.name) + '</a></h3>' + (a.code ? '<span class="art" title="Артикул студии — назовите его менеджеру">' + esc(a.code) + '</span>' : '') + '</div>' +
       props(a) +
       '<div class="apt-links">' + '<button type="button" class="apt-map" data-address="' + esc(a.address) + '">' + ic('map-pin', 16) + 'Показать на карте</button></div>' +
       '<div class="apt-actions"><a class="btn btn-sm btn-outline" href="' + esc(url('catalog/' + a.id + '/')) + '">Подробнее</a><button type="button" class="btn btn-sm apt-cta" aria-expanded="false" aria-controls="f-' + esc(a.id) + '">Оставить заявку</button></div>' +
