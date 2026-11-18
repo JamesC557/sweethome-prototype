@@ -674,3 +674,15 @@ body:has(.vhero) header nav svg{color:#fff}
 .mq-track .rev>p:last-child{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:600px){.mq-track .rev{width:280px;flex-basis:280px}.mq-track{animation-duration:55s}.mq-rev .mq-track{animation-duration:65s}}
 @media(prefers-reduced-motion:reduce){.mq-track{animation:none}.mq-row{overflow-x:auto}}
+/* Договор для постоянных клиентов */
+.contract{background:radial-gradient(ellipse at 15% 20%,#3A2E14 0%,#15120D 70%);color:#F5EEDC}
+.contract-in{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.contract .eyebrow{color:#FFC53D}.contract h2{color:#fff;margin:6px 0 14px}
+.contract-text p{color:rgba(245,238,220,.85);max-width:520px}
+.contract-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.contract .btn-outline{background:transparent!important;color:#FFE08A!important;border:1px solid #FFC53D!important;box-shadow:none}
+.contract-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.contract-list li{display:flex;flex-direction:column;gap:2px;padding:14px 18px 14px 50px;position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,197,61,.22);border-radius:14px}
+.contract-list li::before{content:"✓";position:absolute;left:16px;top:14px;width:22px;height:22px;border-radius:50%;background:#FFC53D;color:#15120D;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.contract-list b{color:#fff;font-size:16px}.contract-list span{color:rgba(245,238,220,.7);font-size:14px}
+@media(max-width:900px){.contract-in{grid-template-columns:1fr;gap:24px}.contract-btns .btn{flex:1;justify-content:center}}
