@@ -515,3 +515,9 @@ html[data-y=y2] .mid-cta .btn.btn-outline-w{background:transparent!important;col
 .art{display:inline-flex;align-items:center;font-size:13px;font-weight:700;letter-spacing:.04em;line-height:1;padding:5px 9px;border-radius:8px;background:#FFF4D1;color:#15120D;border:1px solid #F2B526;vertical-align:middle;white-space:nowrap}
 h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
 .apt-head{justify-content:space-between}
+
+/* юр. документы */
+.legal-nav{font-size:14px;line-height:1.8}.legal-nav b{color:var(--dark)}
+.legal h2{font-size:20px;margin:26px 0 8px}.legal p,.legal li{line-height:1.6}
+.ltab{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}.ltab th,.ltab td{border:1px solid #E8E1D2;padding:8px;text-align:left;vertical-align:top}.ltab th{background:#FFF4D1}
+.req{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0;font-size:15px}.req dt{color:#6b5f58}.req dd{margin:0;overflow-wrap:anywhere}
