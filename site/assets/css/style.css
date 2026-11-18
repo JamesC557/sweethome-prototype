@@ -536,3 +536,11 @@ h1 .art{font-size:16px;padding:6px 11px;margin-left:8px}
 .f-phone span{display:block;font-size:13px;opacity:.75}.f-phone a{font-size:22px;font-weight:700;color:#FFE08A;text-decoration:none}
 @media(max-width:960px){header .h-phone{order:2;margin-left:auto}}
 @media(max-width:560px){header .wrap>a.btn{display:none}header .h-phone{font-size:15px;margin-right:10px}}
+
+/* cookie-баннер */
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;max-width:760px;margin:0 auto;background:#15120D;color:#F5EEDC;border:1px solid #3A2E14;border-radius:16px;padding:16px 18px;box-shadow:0 12px 40px rgba(0,0,0,.35);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cookie[hidden]{display:none}
+.cookie p{margin:0;flex:1 1 320px;font-size:14px;line-height:1.5}.cookie a{color:#FFE08A}
+.cookie-btns{display:flex;gap:10px;flex-wrap:wrap}.cookie .btn{padding:10px 16px;font-size:14px}
+.cookie .btn-outline{background:transparent!important;color:#FFE08A!important;border:1px solid #FFC53D!important;box-shadow:none}
+@media(max-width:560px){.cookie{left:10px;right:10px;bottom:10px;padding:14px}.cookie-btns{width:100%}.cookie-btns .btn{flex:1}}
