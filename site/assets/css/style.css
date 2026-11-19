@@ -689,3 +689,22 @@ body:has(.vhero) header nav svg{color:#fff}
 .seg-contract-btn{margin-top:20px;background:transparent!important;color:#FFE08A!important;border:1.5px solid #FFC53D!important;box-shadow:none!important;backdrop-filter:blur(6px)}
 .seg-contract-btn:hover{background:rgba(255,197,61,.15)!important}
 @media(max-width:600px){.seg-contract-btn{width:100%;justify-content:center;white-space:normal;text-align:center}}
+.vstar{color:#FFC53D;margin-right:2px}
+/* ===== Аудит гармонии ===== */
+/* плавный переход «Почему нас выбирают» → белый блок логотипов */
+.love{background:linear-gradient(180deg,#FFFBF0 0%,#FFF4D1 55%,#FFFFFF 100%)}
+/* статистика сразу под формой — без двойного отступа */
+.vhero-form + #trust{padding-top:16px}
+/* карточки адресов ниже и ровнее */
+.house img{aspect-ratio:16/10}
+.house span{min-height:150px}
+/* логотипы компактнее */
+.clients-cloud{grid-auto-rows:40px}
+/* единый вес заголовков */
+.vhero h1{font-weight:700}
+/* шапка-пилюля читается на светлых блоках */
+body:has(.vhero) header .wrap{background:rgba(21,18,13,.72)}
+/* финальный CTA: вторая кнопка — контурная */
+.final .btn-light,.final .btn+.btn{background:transparent!important;color:#FFE08A!important;border:1px solid #FFC53D!important;box-shadow:none!important}
+.house img{height:auto!important;flex:none}
+@media(max-width:600px){.ltab{display:block;overflow-x:auto;font-size:13px}.ltab td,.ltab th{min-width:120px}}
