@@ -101,7 +101,7 @@ footer{background:#141c26;color:#aab4be;font-size:14px;padding:24px 0}
 .menu-btn{background:none;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:10px;padding:8px 10px;font:inherit;font-size:14px;cursor:pointer}
 header .wrap{position:relative;gap:10px}
 header nav.open{display:flex;flex-direction:column;position:absolute;top:60px;left:0;right:0;background:var(--dark);padding:12px 16px 20px;gap:14px}
-.crumbs{font-size:13px;color:var(--muted);padding:14px 0 0}.crumbs a{color:var(--teal)}
+.crumbs{font-size:13px;color:var(--muted);padding-top:14px}.crumbs a{color:var(--teal)}
 .page-hero{background:var(--cream);padding:32px 0 40px}
 .page-hero .lead{font-size:18px;color:var(--muted);margin:12px 0 20px;max-width:720px}
 .lf select,.lf textarea{font:inherit;padding:16px;border:1px solid #cfd6dc;border-radius:12px;width:100%;background:#fff}
@@ -785,3 +785,13 @@ a.mi:hover{transform:translateY(-2px);border-color:#F2B526;box-shadow:0 6px 14px
 @media(max-width:600px){.cb-fab{right:14px;bottom:14px;padding:14px}.cb-fab span{display:none}}
 @media(prefers-reduced-motion:reduce){.cb-fab svg{animation:none}}
 .cb-dlg{margin:auto!important;inset:0;position:fixed;height:fit-content}
+/* ===== Мобильный аудит 2 ===== */
+a[href^="tel:"]{white-space:nowrap}
+@media(max-width:600px){
+ .btn{white-space:normal;text-align:center;justify-content:center;line-height:1.25}
+ .contract-btns{flex-direction:column;align-items:stretch}
+ .contract-btns .btn{width:100%;flex:none;font-size:15px;padding:15px 18px}
+ .seg-contract-btn,.lf .btn,form .btn[type=submit]{width:100%;font-size:15px;padding:15px 16px}
+ .aside-call{font-size:14px}
+}
+@media(max-width:600px){footer .f-bottom{padding-bottom:84px}.cb-fab{width:52px;height:52px;padding:0;justify-content:center}}
