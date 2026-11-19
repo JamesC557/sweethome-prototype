@@ -3,4 +3,4 @@ Disallow: /api/
 Disallow: /tools/
 Disallow: /seo/
 
-Sitemap: https://irkutsk.sweethomegroup.ru/sitemap.xml
+Sitemap: https://b2b.sweethomeapart.ru/sitemap.xml
