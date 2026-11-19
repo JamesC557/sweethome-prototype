@@ -732,3 +732,8 @@ body:has(.vhero) header .wrap{background:rgba(21,18,13,.72)}
 .houses-cta span{color:rgba(245,238,220,.7);font-size:14px}
 @media(max-width:600px){.houses-cta .btn{width:100%;justify-content:center}.houses-cta span{width:100%;text-align:center}}
 #trust + .love{padding-top:32px}
+/* Цена на ваши даты */
+.apt-price{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:12px 0 4px;padding:10px 14px;background:#FFF8E3;border:1px solid #F7E3A6;border-radius:12px}
+.apt-price-l{font-size:13px;color:#5c5246}
+.apt-price-v{font-size:16px;font-weight:700;color:#15120D}
+.apt-price-big{margin:0 0 14px;padding:14px 16px}.apt-price-big .apt-price-v{font-size:19px}
