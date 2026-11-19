@@ -708,3 +708,27 @@ body:has(.vhero) header .wrap{background:rgba(21,18,13,.72)}
 .final .btn-light,.final .btn+.btn{background:transparent!important;color:#FFE08A!important;border:1px solid #FFC53D!important;box-shadow:none!important}
 .house img{height:auto!important;flex:none}
 @media(max-width:600px){.ltab{display:block;overflow-x:auto;font-size:13px}.ltab td,.ltab th{min-width:120px}}
+/* ===== Мобильная полировка ===== */
+/* форма под hero на главной: белая карточка, ровные края */
+.vhero-form form.lf{background:#fff!important;border:1px solid #EDE5D3;border-radius:22px;box-shadow:0 12px 34px rgba(21,18,13,.08);padding:22px}
+.vhero-form form.lf label,.vhero-form form.lf .f-hint,.vhero-form form.lf .form-note{color:#5c5246}
+/* плашки преимуществ — в строку и компактнее */
+.vhero-form .hero-pts{display:flex;flex-wrap:wrap;gap:8px}
+.vhero-form .hero-pts li{font-size:14px;padding:6px 12px 6px 8px}
+.vhero-form .hero-pts li img{width:22px;height:22px}
+/* цифры: 3 в ряд и аккуратнее на телефоне */
+.stats3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){
+ .vhero-form form.lf{padding:16px}
+ #trust{padding:36px 0}
+ .stats3{gap:10px}
+ .stats3 .stat .big{font-size:26px;line-height:1.1}
+ .stats3 .stat p{font-size:12px;line-height:1.35;margin-top:4px}
+ section{padding-top:56px;padding-bottom:56px}
+ .vhero{padding:0}
+}
+/* кнопка каталога после адресов */
+.houses-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:4px 0 28px}
+.houses-cta span{color:rgba(245,238,220,.7);font-size:14px}
+@media(max-width:600px){.houses-cta .btn{width:100%;justify-content:center}.houses-cta span{width:100%;text-align:center}}
+#trust + .love{padding-top:32px}
