@@ -737,3 +737,6 @@ body:has(.vhero) header .wrap{background:rgba(21,18,13,.72)}
 .apt-price-l{font-size:13px;color:#5c5246}
 .apt-price-v{font-size:16px;font-weight:700;color:#15120D}
 .apt-price-big{margin:0 0 14px;padding:14px 16px}.apt-price-big .apt-price-v{font-size:19px}
+.form-call{display:inline-flex;align-items:center;gap:10px;margin:2px 0 16px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid #EDE5D3;text-decoration:none;color:#15120D;box-shadow:0 4px 14px rgba(21,18,13,.06);white-space:nowrap}
+.form-call span{font-size:14px;color:#5c5246}.form-call b{font-size:17px}
+.form-call:hover{border-color:#F2B526}
