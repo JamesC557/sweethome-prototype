@@ -795,3 +795,6 @@ a[href^="tel:"]{white-space:nowrap}
  .aside-call{font-size:14px}
 }
 @media(max-width:600px){footer .f-bottom{padding-bottom:84px}.cb-fab{width:52px;height:52px;padding:0;justify-content:center}}
+/* iOS: не показывать кнопку Play поверх фонового видео (режим энергосбережения) */
+.vhero-video::-webkit-media-controls,.vhero-video::-webkit-media-controls-start-playback-button,.vhero-video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none}
+.vhero-video{pointer-events:none}
