@@ -742,3 +742,10 @@ body:has(.vhero) header .wrap{background:rgba(21,18,13,.72)}
 .form-call:hover{border-color:#F2B526}
 section[id]{scroll-margin-top:84px}
 .crumbs{padding-top:14px!important;padding-bottom:12px!important}
+/* Мессенджеры */
+.msgr{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 16px}
+.msgr-l{width:100%;font-size:13px;color:#5c5246}
+.msgr-b{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;color:#fff;transition:transform .2s,box-shadow .2s}
+a.msgr-b:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
+.msgr-wa{background:#25D366}.msgr-tg{background:#229ED9}.msgr-max{background:linear-gradient(135deg,#4F3BFF,#9B3BFF);cursor:default}
+.msgr-dark .msgr-l{color:rgba(245,238,220,.7)}
