@@ -801,3 +801,11 @@ a[href^="tel:"]{white-space:nowrap}
 .feat-i{grid-auto-rows:1fr}
 .feat-i li{height:100%;box-sizing:border-box}
 @media(max-width:1024px){.feat-i li{min-height:118px;justify-content:flex-start}}
+/* Выпадающее меню «Для бизнеса» в стиле тёмной шапки */
+@media(min-width:768px){
+  header .nav-dd-menu{background:rgba(21,18,13,.96);border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 40px rgba(0,0,0,.35);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:8px;top:calc(100% + 6px)}
+  header .nav-dd-menu::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+  header .nav-dd-menu a,header nav .nav-dd-menu a{color:#F5EFE2!important;font-weight:500;opacity:1}
+  header .nav-dd-menu a:hover,header .nav-dd-menu a:focus-visible{background:rgba(255,197,61,.14);color:#FFC53D!important}
+  header .nav-dd-menu a[aria-current]{color:#FFC53D!important}
+}
