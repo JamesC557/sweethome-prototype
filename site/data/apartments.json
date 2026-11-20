@@ -23,7 +23,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -38,11 +38,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-01/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-01/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-01/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-01/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-01/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-01/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-01/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-01/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-01/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-01/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Ю1",
    "near_car": [
@@ -70,7 +70,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -85,11 +85,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-02/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-02/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-02/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-02/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-02/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-02/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-02/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-02/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-02/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-02/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Ю2",
    "near_car": [
@@ -117,7 +117,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -129,11 +129,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-03/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-03/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-03/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-03/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-03/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-03/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-03/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-03/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-03/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-03/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Г1",
    "near_car": [
@@ -159,7 +159,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -171,11 +171,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-04/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-04/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-04/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-04/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-04/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-04/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-04/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-04/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-04/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-04/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Г2",
    "near_car": [
@@ -201,7 +201,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -213,11 +213,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-05/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-05/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-05/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-05/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-05/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-05/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-05/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-05/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-05/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-05/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Г3",
    "near_car": [
@@ -243,7 +243,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -255,11 +255,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-06/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-06/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-06/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-06/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-06/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-06/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-06/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-06/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-06/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-06/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Д1",
    "near_car": [
@@ -285,7 +285,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -297,11 +297,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-07/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-07/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-07/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-07/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-07/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-07/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-07/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-07/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-07/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-07/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Д2",
    "near_car": [
@@ -327,7 +327,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -339,11 +339,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-08/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-08/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-08/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-08/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-08/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-08/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-08/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-08/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-08/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-08/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Д3",
    "near_car": [
@@ -369,7 +369,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -381,11 +381,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-09/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-09/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-09/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-09/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-09/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-09/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-09/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-09/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-09/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-09/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Д4",
    "near_car": [
@@ -411,7 +411,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -423,11 +423,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-10/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-10/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-10/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-10/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-10/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-10/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-10/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-10/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-10/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-10/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / Д5",
    "near_car": [
@@ -453,7 +453,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -465,11 +465,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-11/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-11/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-11/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-11/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-11/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-11/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-11/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-11/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-11/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-11/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / И1",
    "near_car": [
@@ -495,7 +495,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -507,11 +507,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-12/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-12/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-12/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-12/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-12/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-12/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-12/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-12/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-12/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-12/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / И2",
    "near_car": [
@@ -537,7 +537,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -552,11 +552,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-13/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-13/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-13/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-13/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-13/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-13/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-13/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-13/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-13/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-13/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / К1",
    "near_car": [
@@ -585,7 +585,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -600,11 +600,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-14/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-14/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-14/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-14/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-14/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-14/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-14/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-14/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-14/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-14/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / К2",
    "near_car": [
@@ -633,7 +633,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -648,11 +648,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-15/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-15/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-15/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-15/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-15/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-15/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-15/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-15/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-15/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-15/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / К3",
    "near_car": [
@@ -681,7 +681,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -693,11 +693,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-16/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-16/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-16/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-16/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-16/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-16/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-16/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-16/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-16/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-16/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / С1",
    "near_car": [
@@ -723,7 +723,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -735,11 +735,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-17/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-17/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-17/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-17/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-17/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-17/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-17/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-17/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-17/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-17/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / С2",
    "near_car": [
@@ -765,7 +765,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -777,11 +777,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-18/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-18/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-18/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-18/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-18/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-18/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-18/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-18/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-18/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-18/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / С3",
    "near_car": [
@@ -807,7 +807,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -819,11 +819,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-19/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-19/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-19/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-19/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-19/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-19/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-19/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-19/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-19/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-19/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / М1",
    "near_car": [
@@ -848,7 +848,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -860,11 +860,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-20/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-20/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-20/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-20/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-20/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-20/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-20/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-20/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-20/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-20/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / М2",
    "near_car": [
@@ -889,7 +889,7 @@
    "capacity": null,
    "kitchen": null,
    "appliances": [],
-   "washer": null,
+   "washer": true,
    "wifi": null,
    "parking": null,
    "to_center": null,
@@ -901,11 +901,11 @@
     "Всё необходимое для проживания"
    ],
    "photos": [
-    "assets/img/apartments/sh-21/1.jpg?v=1795174185",
-    "assets/img/apartments/sh-21/2.jpg?v=1795174185",
-    "assets/img/apartments/sh-21/3.jpg?v=1795174185",
-    "assets/img/apartments/sh-21/4.jpg?v=1795174185",
-    "assets/img/apartments/sh-21/5.jpg?v=1795174185"
+    "assets/img/apartments/sh-21/1.jpg?v=1795174991",
+    "assets/img/apartments/sh-21/2.jpg?v=1795174991",
+    "assets/img/apartments/sh-21/3.jpg?v=1795174991",
+    "assets/img/apartments/sh-21/4.jpg?v=1795174991",
+    "assets/img/apartments/sh-21/5.jpg?v=1795174991"
    ],
    "source": "Google Drive «Студии Sweet Home» / М3",
    "near_car": [

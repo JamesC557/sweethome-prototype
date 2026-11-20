@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795174185').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795174991').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
@@ -156,7 +156,7 @@
       if (a.area) p.push(['house', a.area + ' м²']);
       if (a.floor) p.push(['house', a.floor + ' этаж' + (a.elevator === true ? ', лифт' : a.elevator === false ? ', без лифта' : '')]);
       if (a.kitchen) p.push(['check', 'Кухня' + (a.appliances && a.appliances.length ? ': ' + a.appliances.join(', ') : '')]);
-      if (a.washer) p.push(['check', 'Стиральная машина']);
+      if (a.washer) p.push(['washer', 'Стиральная машина']);
       if (a.wifi) p.push(['check', 'Wi‑Fi']);
       if (a.parking) p.push(['check', 'Парковка: ' + a.parking]);
       if (a.near && a.near.length) p.push(['search', 'Пешком: ' + a.near.join(', ')]);
