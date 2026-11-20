@@ -77,7 +77,7 @@
       const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
       const j = await r.json().catch(() => ({}));
       if (!r.ok || !j.ok) throw new Error(j.error || String(r.status));
-      ok.textContent = f.dataset.form === 'callback' ? 'Спасибо! Перезвоним в течение 15 минут.' : 'Спасибо! Заявка ' + (j.id || '') + ' принята. Счёт и подтверждение пришлём в течение 4 рабочих часов.';
+      ok.textContent = f.dataset.form === 'callback' ? 'Спасибо! Перезвоним в течение 15 минут.' : 'Спасибо! Заявка ' + (j.id || '') + ' принята. Перезвоним в течение 15 минут и пришлём цену на ваши даты.';
       ok.style.display = 'block'; if (err) err.style.display = 'none'; f.reset();
       // TODO: цель Яндекс Метрики: ym(COUNTER_ID, 'reachGoal', 'lead')
     } catch (x) {
@@ -89,7 +89,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795175738').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795183250').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
