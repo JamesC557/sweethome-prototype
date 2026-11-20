@@ -797,3 +797,7 @@ a[href^="tel:"]{white-space:nowrap}
 /* iOS: не показывать кнопку Play поверх фонового видео (режим энергосбережения) */
 .vhero-video::-webkit-media-controls,.vhero-video::-webkit-media-controls-start-playback-button,.vhero-video::-webkit-media-controls-panel{display:none!important;-webkit-appearance:none}
 .vhero-video{pointer-events:none}
+/* «Что есть в студии»: карточки одинаковой высоты */
+.feat-i{grid-auto-rows:1fr}
+.feat-i li{height:100%;box-sizing:border-box}
+@media(max-width:1024px){.feat-i li{min-height:118px;justify-content:flex-start}}
