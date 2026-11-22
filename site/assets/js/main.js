@@ -46,6 +46,7 @@
   $$('form.js-lead').forEach(addTrap);
   new MutationObserver(() => $$('form.js-lead').forEach(addTrap)).observe(document.body, { childList: true, subtree: true });
 
+  const T0 = Date.now(); // время загрузки страницы (проверка «слишком быстро»)
   // Единый обработчик всех форм заявок
   function validate(f) {
     const el = f.elements;
@@ -65,7 +66,7 @@
     if (err) { err.textContent = msg; err.style.display = msg ? 'block' : 'none'; }
     if (msg) { if (ok) ok.style.display = 'none'; return; }
     const data = Object.fromEntries(new FormData(f).entries());
-    data.page = location.pathname; data.form = f.dataset.form || 'lead';
+    data.page = location.pathname; data.t = Date.now() - T0; data.form = f.dataset.form || 'lead';
     if (CLIENT) data.client = CLIENT;
     if (!FORM_ENDPOINT) {
       ok.textContent = 'Демо-режим: заявка никуда не отправлена (FORM_ENDPOINT не подключён).';
@@ -89,7 +90,7 @@
   const BASE = window.SH_BASE || '/';
   const url = (p) => BASE + String(p).replace(/^\//, '');
   let aptsP = null;
-  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795198087').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
+  const loadApts = () => aptsP || (aptsP = fetch((window.SH_BASE||'/')+'data/apartments.json?v=1795354387').then((r) => { if (!r.ok) throw new Error(); return r.json(); }).then((j) => j.apartments));
   const ic = (id, s) => '<svg class="i" width="' + (s || 18) + '" height="' + (s || 18) + '" aria-hidden="true"><use href="#i-' + id + '"/></svg>';
   // Группировка студий по домам (адресам)
   const byAddress = (apts) => {
